@@ -56,7 +56,7 @@ const Navbar = ({ scrolled }) => {
             >
               <div className="relative">
                 <img
-                  src="https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/tgzzccp3_01fd1eed-0d26-4594-a13c-5d3dd2f78f9f.png"
+                  src="https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/4dx0bgm4_e0804916-7e47-4dc6-b7f7-acdc88203459.png"
                   alt="Ripple VFX"
                   className="h-16 w-auto transition-all duration-500 group-hover:scale-110 group-hover:brightness-125"
                   style={{ 
@@ -91,9 +91,9 @@ const Navbar = ({ scrolled }) => {
         onClick={() => setSideMenuOpen(false)}
       />
 
-      {/* Side Menu Panel */}
+      {/* Side Menu Panel - WIDER */}
       <div
-        className={`fixed top-0 right-0 h-full w-full md:w-[500px] z-50 transition-all duration-700 ease-out ${
+        className={`fixed top-0 right-0 h-full w-full md:w-[600px] z-50 transition-all duration-700 ease-out ${
           sideMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
         }`}
       >
@@ -121,9 +121,9 @@ const Navbar = ({ scrolled }) => {
             {/* Logo in menu */}
             <div className="mb-12 animate-in fade-in slide-in-from-right-10 duration-700">
               <img
-                src="https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/tgzzccp3_01fd1eed-0d26-4594-a13c-5d3dd2f78f9f.png"
+                src="https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/4dx0bgm4_e0804916-7e47-4dc6-b7f7-acdc88203459.png"
                 alt="Ripple VFX"
-                className="h-24 w-auto"
+                className="h-28 w-auto"
                 style={{ 
                   mixBlendMode: 'screen'
                 }}

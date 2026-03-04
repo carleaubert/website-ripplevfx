@@ -20,9 +20,9 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="md:col-span-2">
             <img
-              src="https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/tgzzccp3_01fd1eed-0d26-4594-a13c-5d3dd2f78f9f.png"
+              src="https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/4dx0bgm4_e0804916-7e47-4dc6-b7f7-acdc88203459.png"
               alt="Ripple VFX"
-              className="h-16 w-auto mb-4"
+              className="h-20 w-auto mb-4"
               style={{ 
                 mixBlendMode: 'screen'
               }}
