@@ -40,32 +40,48 @@ const Hero = () => {
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Animated Background with parallax */}
-      <div 
-        className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black"
-        style={{ transform: `translateY(${parallaxOffset}px)` }}
-      >
-        {/* Radial gradient that follows mouse */}
+      {/* Video Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Vimeo Video embed - full screen background */}
+        <div 
+          className="absolute w-full h-full"
+          style={{ 
+            transform: `translateY(${parallaxOffset * 0.2}px)`,
+            minWidth: '100%',
+            minHeight: '100%'
+          }}
+        >
+          <iframe
+            src="https://player.vimeo.com/video/452932852?background=1&autoplay=1&loop=1&autopause=0&muted=1&quality=1080p"
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              width: '100vw',
+              height: '100vh',
+              transform: 'translate(-50%, -50%) scale(1.2)',
+              pointerEvents: 'none'
+            }}
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            title="VFX Reel Background"
+          />
+        </div>
+        
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
+        
+        {/* Animated gradient overlay */}
         <div
           className="absolute inset-0 opacity-30 transition-all duration-300"
           style={{
             backgroundImage: `radial-gradient(circle at ${50 + mousePosition.x}% ${50 + mousePosition.y}%, rgba(255,255,255,0.15) 0%, transparent 50%)`,
           }}
         />
-        
-        {/* Animated grid */}
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
-            backgroundSize: '50px 50px',
-            transform: `translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px)`
-          }}
-        />
 
         {/* Floating particles */}
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
+        <div className="absolute inset-0 z-20">
+          {[...Array(15)].map((_, i) => (
             <div
               key={i}
               className="absolute w-1 h-1 bg-white rounded-full animate-float"
@@ -83,34 +99,22 @@ const Hero = () => {
 
       {/* Content with parallax */}
       <div 
-        className="relative z-10 container mx-auto px-6 text-center"
+        className="relative z-30 container mx-auto px-6 text-center"
         style={{ transform: `translateY(${parallaxOffset * -0.3}px)` }}
       >
-        {/* Logo with reveal animation */}
-        <div className="mb-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100">
-          <div className="relative inline-block">
-            <img
-              src="https://customer-assets.emergentagent.com/job_52f5f95f-336b-4a77-a760-c8c98d488dc8/artifacts/yt7c9ahv_b6f6364c-a487-49e5-a865-d75768bb5256.png"
-              alt="Ripple VFX"
-              className="h-32 w-auto mb-8 hover:scale-110 transition-transform duration-500"
-            />
-            {/* Glow effect */}
-            <div className="absolute inset-0 blur-3xl bg-white/10 opacity-50 animate-pulse" />
-          </div>
-        </div>
 
         {/* Main heading with stagger animation */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
-          <span className="block animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
+          <span className="block animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300 drop-shadow-2xl">
             Creating Visual
           </span>
-          <span className="block bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500">
+          <span className="block bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500 drop-shadow-2xl">
             <span className="inline-block hover:scale-110 transition-transform duration-300">Excellence</span>
           </span>
         </h1>
 
         {/* Description with reveal */}
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-700 leading-relaxed">
+        <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-12 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-700 leading-relaxed drop-shadow-lg">
           Ripple VFX is a cutting-edge visual effects studio specializing in feature films,
           episodic content, and commercial projects. We bring imagination to reality.
         </p>
