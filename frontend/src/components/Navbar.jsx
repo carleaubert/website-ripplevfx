@@ -60,7 +60,6 @@ const Navbar = ({ scrolled }) => {
                   alt="Ripple VFX"
                   className="h-16 w-auto transition-all duration-500 group-hover:scale-110 group-hover:brightness-125"
                   style={{ 
-                    filter: 'brightness(0) invert(1)',
                     mixBlendMode: 'screen'
                   }}
                 />
@@ -126,7 +125,6 @@ const Navbar = ({ scrolled }) => {
                 alt="Ripple VFX"
                 className="h-20 w-auto"
                 style={{ 
-                  filter: 'brightness(0) invert(1)',
                   mixBlendMode: 'screen'
                 }}
               />
