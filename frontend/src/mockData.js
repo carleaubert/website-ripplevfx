@@ -16,7 +16,7 @@ export const vfxProjects = [
 export const digitalProjects = [
   {
     id: 1,
-    title: "JobTrack App",
+    title: "JobFlow App",
     category: "Mobile Application",
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
     status: "Coming Soon",
