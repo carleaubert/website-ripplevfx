@@ -40,31 +40,21 @@ const Hero = () => {
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Video Background */}
+      {/* Professional VFX Studio Image Background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Vimeo Video embed - full screen background */}
         <div 
           className="absolute w-full h-full"
           style={{ 
-            transform: `translateY(${parallaxOffset * 0.2}px)`,
-            minWidth: '100%',
-            minHeight: '100%'
+            transform: `translateY(${parallaxOffset * 0.2}px)`
           }}
         >
-          <iframe
-            src="https://player.vimeo.com/video/452932852?background=1&autoplay=1&loop=1&autopause=0&muted=1&quality=1080p"
+          <img
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=80"
+            alt="VFX Studio"
+            className="absolute inset-0 w-full h-full object-cover"
             style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              width: '100vw',
-              height: '100vh',
-              transform: 'translate(-50%, -50%) scale(1.2)',
-              pointerEvents: 'none'
+              filter: 'brightness(0.6)'
             }}
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            title="VFX Reel Background"
           />
         </div>
         
