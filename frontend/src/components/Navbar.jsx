@@ -179,6 +179,34 @@ const Navbar = ({ scrolled, activeDepartment, onDepartmentChange }) => {
               />
             </div>
 
+            {/* Department Switcher in Menu */}
+            <div className="mb-8 animate-in fade-in slide-in-from-right-10 duration-700" style={{ animationDelay: '100ms' }}>
+              <div className="inline-flex w-full bg-black/60 backdrop-blur-xl border border-white/10 rounded-full p-1 gap-1">
+                <button
+                  onClick={() => { onDepartmentChange('vfx'); setSideMenuOpen(false); }}
+                  className={`flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-medium transition-all duration-500 ${
+                    activeDepartment === 'vfx'
+                      ? 'bg-white text-black shadow-2xl shadow-white/20'
+                      : 'text-white hover:bg-white/10'
+                  }`}
+                >
+                  <Film size={16} />
+                  <span>Ripple VFX</span>
+                </button>
+                <button
+                  onClick={() => { onDepartmentChange('digital'); setSideMenuOpen(false); }}
+                  className={`flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-medium transition-all duration-500 ${
+                    activeDepartment === 'digital'
+                      ? 'bg-white text-black shadow-2xl shadow-white/20'
+                      : 'text-white hover:bg-white/10'
+                  }`}
+                >
+                  <Building2 size={16} />
+                  <span>Ripple Digital</span>
+                </button>
+              </div>
+            </div>
+
             <nav className="flex-1">
               <ul className="space-y-2">
                 {navItems.map((item, index) => (
