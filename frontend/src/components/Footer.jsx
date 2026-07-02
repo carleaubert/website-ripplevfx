@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { contactInfo } from '../mockData';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,14 +22,14 @@ const Footer = () => {
           <div className="md:col-span-2">
             <img
               src="https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/4dx0bgm4_e0804916-7e47-4dc6-b7f7-acdc88203459.png"
-              alt="Ripple VFX"
+              alt="Ripple VFX Studios"
               className="h-20 w-auto mb-4"
               style={{ 
                 mixBlendMode: 'screen'
               }}
             />
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
-              Creating stunning visual effects for film, television, and digital media.
+              Creating stunning visual effects and building modern digital solutions.
               Bringing imagination to reality through cutting-edge technology and artistic excellence.
             </p>
             {/* Social Links */}
@@ -85,16 +86,18 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <ul className="space-y-3 text-gray-400">
-              <li>123 Studio Boulevard</li>
-              <li>Los Angeles, CA 90028</li>
+              <li>{contactInfo.address.street}</li>
+              <li>{contactInfo.address.city}, {contactInfo.address.province}</li>
+              <li>{contactInfo.address.postal}</li>
+              <li>{contactInfo.address.country}</li>
               <li className="pt-3">
-                <a href="mailto:contact@ripplevfx.com" className="hover:text-white transition-colors">
-                  contact@ripplevfx.com
+                <a href={`mailto:${contactInfo.email}`} className="hover:text-white transition-colors">
+                  {contactInfo.email}
                 </a>
               </li>
               <li>
-                <a href="tel:+15551234567" className="hover:text-white transition-colors">
-                  +1 (555) 123-4567
+                <a href={`tel:${contactInfo.phone}`} className="hover:text-white transition-colors">
+                  {contactInfo.phone}
                 </a>
               </li>
             </ul>
@@ -104,7 +107,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {currentYear} Ripple VFX. All rights reserved.
+            © {currentYear} Ripple VFX Studios. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">

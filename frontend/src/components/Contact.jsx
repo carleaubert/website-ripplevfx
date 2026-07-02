@@ -5,6 +5,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
+import { contactInfo } from '../mockData';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -17,7 +18,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Mock form submission
     console.log('Form submitted:', formData);
     toast({
       title: "Message Sent!",
@@ -33,7 +33,6 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 bg-gradient-to-b from-black via-gray-950 to-black">
       <div className="container mx-auto px-6">
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">Let's Create Together</h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
@@ -51,7 +50,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">Email</h3>
-                  <p className="text-gray-400 text-sm">contact@ripplevfx.com</p>
+                  <p className="text-gray-400 text-sm">{contactInfo.email}</p>
                 </div>
               </div>
             </Card>
@@ -63,7 +62,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">Phone</h3>
-                  <p className="text-gray-400 text-sm">+1 (555) 123-4567</p>
+                  <p className="text-gray-400 text-sm">{contactInfo.phone}</p>
                 </div>
               </div>
             </Card>
@@ -76,8 +75,9 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold mb-2">Location</h3>
                   <p className="text-gray-400 text-sm">
-                    123 Studio Boulevard<br />
-                    Los Angeles, CA 90028
+                    {contactInfo.address.street}<br />
+                    {contactInfo.address.city}, {contactInfo.address.province} {contactInfo.address.postal}<br />
+                    {contactInfo.address.country}
                   </p>
                 </div>
               </div>
