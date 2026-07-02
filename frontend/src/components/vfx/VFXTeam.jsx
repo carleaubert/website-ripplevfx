@@ -67,8 +67,7 @@ const VFXTeam = () => {
                 <h3 className="text-2xl font-bold mb-2 text-white group-hover:translate-x-2 transition-all duration-300">
                   {member.name}
                 </h3>
-                <p className="text-gray-400 mb-2 group-hover:text-gray-300 transition-colors">{member.role}</p>
-                <p className="text-sm text-gray-500 group-hover:text-gray-400 transition-colors">{member.credits}</p>
+                <p className="text-gray-400 group-hover:text-gray-300 transition-colors">{member.role}</p>
               </div>
 
               <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-white via-gray-300 to-white transition-all duration-500 group-hover:w-full" />
