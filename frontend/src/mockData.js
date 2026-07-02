@@ -5,7 +5,7 @@ export const vfxProjects = [
   {
     id: 1,
     title: "Coming Soon",
-    category: "Feature Film",
+    category: "Series",
     image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80",
     year: "2026",
     description: "Coming Soon"

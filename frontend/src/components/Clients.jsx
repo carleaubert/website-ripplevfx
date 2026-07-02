@@ -30,26 +30,6 @@ const Clients = () => {
             </div>
           ))}
         </div>
-
-        {/* Stats Section */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="text-center p-6">
-            <div className="text-5xl font-bold mb-2">50+</div>
-            <p className="text-gray-400">Projects Completed</p>
-          </div>
-          <div className="text-center p-6">
-            <div className="text-5xl font-bold mb-2">15+</div>
-            <p className="text-gray-400">Years Experience</p>
-          </div>
-          <div className="text-center p-6">
-            <div className="text-5xl font-bold mb-2">25+</div>
-            <p className="text-gray-400">Team Members</p>
-          </div>
-          <div className="text-center p-6">
-            <div className="text-5xl font-bold mb-2">100%</div>
-            <p className="text-gray-400">Client Satisfaction</p>
-          </div>
-        </div>
       </div>
     </section>
   );

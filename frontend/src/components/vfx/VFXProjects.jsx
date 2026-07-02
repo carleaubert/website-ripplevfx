@@ -74,7 +74,7 @@ const VFXProjects = () => {
               {/* Content */}
               <div className="p-6 relative">
                 <p className="text-sm text-gray-400 mb-2 group-hover:text-gray-300 transition-colors">{project.category}</p>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-all duration-300 group-hover:translate-x-2">
+                <h3 className="text-2xl font-bold mb-3 text-white group-hover:translate-x-2 transition-all duration-300">
                   {project.title}
                 </h3>
                 <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">

@@ -63,7 +63,7 @@ const DigitalTeam = () => {
               </div>
 
               <div className="p-6 relative">
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-white transition-all duration-300 group-hover:translate-x-2">
+                <h3 className="text-2xl font-bold mb-2 text-white group-hover:translate-x-2 transition-all duration-300">
                   {member.name}
                 </h3>
                 <p className="text-gray-400 mb-1 group-hover:text-gray-300 transition-colors">{member.role}</p>

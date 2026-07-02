@@ -57,7 +57,7 @@ const VFXAbout = () => {
             <div className="relative h-96 rounded-lg overflow-hidden group">
               <img
                 ref={imageRef}
-                src="https://images.unsplash.com/photo-1632187981988-40f3cbaeef5e"
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"
                 alt="VFX Studio"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />

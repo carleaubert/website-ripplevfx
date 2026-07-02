@@ -63,34 +63,6 @@ const Home = () => {
         activeDepartment={activeDepartment}
         onDepartmentChange={switchDepartment}
       />
-      
-      {/* Department Switcher - Fixed below navbar */}
-      <div className="fixed top-20 left-0 right-0 z-30 flex justify-center pt-4">
-        <div className="inline-flex bg-black/80 backdrop-blur-xl border border-white/10 rounded-full p-2 gap-2">
-          <button
-            onClick={() => switchDepartment('vfx')}
-            className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-500 ${
-              activeDepartment === 'vfx'
-                ? 'bg-white text-black shadow-2xl shadow-white/20'
-                : 'text-white hover:bg-white/10'
-            }`}
-          >
-            <Film size={18} />
-            <span>Ripple VFX</span>
-          </button>
-          <button
-            onClick={() => switchDepartment('digital')}
-            className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-500 ${
-              activeDepartment === 'digital'
-                ? 'bg-white text-black shadow-2xl shadow-white/20'
-                : 'text-white hover:bg-white/10'
-            }`}
-          >
-            <Building2 size={18} />
-            <span>Ripple Digital</span>
-          </button>
-        </div>
-      </div>
 
       {/* Department Content */}
       <div className="transition-all duration-500">

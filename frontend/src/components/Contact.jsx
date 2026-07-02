@@ -49,7 +49,7 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Email</h3>
+                  <h3 className="font-semibold mb-2 text-white">Email</h3>
                   <p className="text-gray-400 text-sm">{contactInfo.email}</p>
                 </div>
               </div>
@@ -61,7 +61,7 @@ const Contact = () => {
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Phone</h3>
+                  <h3 className="font-semibold mb-2 text-white">Phone</h3>
                   <p className="text-gray-400 text-sm">{contactInfo.phone}</p>
                 </div>
               </div>
@@ -73,7 +73,7 @@ const Contact = () => {
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Location</h3>
+                  <h3 className="font-semibold mb-2 text-white">Location</h3>
                   <p className="text-gray-400 text-sm">
                     {contactInfo.address.street}<br />
                     {contactInfo.address.city}, {contactInfo.address.province} {contactInfo.address.postal}<br />
@@ -90,7 +90,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium mb-2 text-white">
                       Name *
                     </label>
                     <Input
@@ -104,7 +104,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium mb-2 text-white">
                       Email *
                     </label>
                     <Input
@@ -121,7 +121,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium mb-2">
+                  <label htmlFor="company" className="block text-sm font-medium mb-2 text-white">
                     Company
                   </label>
                   <Input
@@ -135,7 +135,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-white">
                     Message *
                   </label>
                   <Textarea
