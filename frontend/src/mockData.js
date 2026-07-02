@@ -40,16 +40,16 @@ export const vfxTeam = [
   {
     id: 1,
     name: "Carle Aubert",
-    role: "VFX Supervisor / Co-Founder",
+    role: "Co-Founder",
     image: "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/9uxdyj7g_Aubert_photo.jpg",
-    credits: "VFX Supervisor"
+    credits: "Co-Founder"
   },
   {
     id: 2,
     name: "Aymeric Ballister",
-    role: "VFX Supervisor / Co-Founder",
+    role: "Co-Founder",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-    credits: "VFX Supervisor"
+    credits: "Co-Founder"
   }
 ];
 
@@ -58,17 +58,16 @@ export const digitalTeam = [
   {
     id: 1,
     name: "Carle Aubert",
-    role: "Owner",
-    subtitle: "VFX Supervisor / Co-Founder",
+    role: "Co-Founder",
     image: "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/9uxdyj7g_Aubert_photo.jpg",
-    credits: "Owner"
+    credits: "Co-Founder"
   },
   {
     id: 2,
     name: "Aymeric Ballister",
-    role: "VFX Supervisor / Co-Founder",
+    role: "Co-Founder",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-    credits: "VFX Supervisor"
+    credits: "Co-Founder"
   }
 ];
 
