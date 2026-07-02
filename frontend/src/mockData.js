@@ -41,7 +41,7 @@ export const vfxTeam = [
     id: 1,
     name: "Carle Aubert",
     role: "VFX Supervisor / Co-Founder",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+    image: "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/9uxdyj7g_Aubert_photo.jpg",
     credits: "VFX Supervisor"
   },
   {
@@ -60,7 +60,7 @@ export const digitalTeam = [
     name: "Carle Aubert",
     role: "Owner",
     subtitle: "VFX Supervisor / Co-Founder",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+    image: "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/9uxdyj7g_Aubert_photo.jpg",
     credits: "Owner"
   },
   {
