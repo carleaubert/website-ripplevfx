@@ -47,7 +47,7 @@ const VFXTeam = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {vfxTeam.map((member, index) => (
             <Card
               key={member.id}
@@ -67,7 +67,16 @@ const VFXTeam = () => {
                 <h3 className="text-2xl font-bold mb-2 text-white group-hover:translate-x-2 transition-all duration-300">
                   {member.name}
                 </h3>
-                <p className="text-gray-400 group-hover:text-gray-300 transition-colors">{member.role}</p>
+                <p className="text-gray-400 mb-4 group-hover:text-gray-300 transition-colors">{member.role}</p>
+                
+                {/* Bio */}
+                {member.bio && (
+                  <div className="mt-4 pt-4 border-t border-white/10">
+                    <p className="text-sm text-gray-400 leading-relaxed whitespace-pre-line">
+                      {member.bio}
+                    </p>
+                  </div>
+                )}
               </div>
 
               <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-white via-gray-300 to-white transition-all duration-500 group-hover:w-full" />

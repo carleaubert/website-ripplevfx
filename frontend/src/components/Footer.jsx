@@ -1,17 +1,9 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import { contactInfo } from '../mockData';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Youtube, href: '#', label: 'YouTube' }
-  ];
 
   return (
     <footer className="bg-black border-t border-white/10">
@@ -32,21 +24,15 @@ const Footer = () => {
               Creating stunning visual effects and building modern digital solutions.
               Bringing imagination to reality through cutting-edge technology and artistic excellence.
             </p>
-            {/* Social Links */}
+            {/* Social Links - LinkedIn only */}
             <div className="flex gap-4">
-              {socialLinks.map((social, index) => {
-                const IconComponent = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300 group"
-                  >
-                    <IconComponent className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
-                  </a>
-                );
-              })}
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300 group"
+              >
+                <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+              </a>
             </div>
           </div>
 

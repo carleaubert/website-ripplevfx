@@ -41,15 +41,17 @@ export const vfxTeam = [
     id: 1,
     name: "Carle Aubert",
     role: "Co-Founder",
-    image: "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/9uxdyj7g_Aubert_photo.jpg",
-    credits: "Co-Founder"
+    image: "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/0coojn51_carleaubert.png",
+    credits: "Co-Founder",
+    bio: "With over 10 years of experience in feature film and episodic visual effects, Carle is a Senior VFX Compositor specializing in high-end compositing, CG integration, and photoreal image creation.\n\nDriven by a lifelong passion for cinematic storytelling, he began his creative career as a Video Director and Motion Designer, creating immersive visual experiences for museums and exhibitions before making the transition to feature film visual effects.\n\nHaving worked at leading studios including Sony Pictures Imageworks, Laika, Eyeline Studios, MPC, Method Studios, FuseFX, and Zoic Studios, he has contributed to a wide range of award-winning films and premium television productions.\n\nPassionate about both the artistic and technical sides of compositing, he enjoys solving complex visual challenges while developing efficient Nuke workflows that support production.\n\nKnown for his attention to detail, collaborative mindset, and calm approach under pressure, Carle is committed to delivering seamless visual effects that serve the story while maintaining the highest standards of quality."
   },
   {
     id: 2,
-    name: "Aymeric Ballister",
+    name: "Aymeric Ballester",
     role: "Co-Founder",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-    credits: "Co-Founder"
+    image: "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/l8ucf533_aymericballester.jpeg",
+    credits: "Co-Founder",
+    bio: "With over 10 years of experience in feature film visual effects, Aymeric is a VFX Compositor and Nuke Technical Director specializing in compositing, pipeline development, and workflow optimization.\n\nHaving worked at leading studios including DNEG and Eyeline Studios, he has contributed to Academy Award-winning productions such as First Man and Dune.\n\nCombining artistic expertise with technical innovation, he develops scalable Nuke tools, production workflows, and color management solutions that streamline complex pipelines while supporting creative excellence.\n\nKnown for his collaborative approach and practical problem-solving, Aymeric is committed to delivering reliable, efficient solutions that help productions achieve the highest standards of visual quality."
   }
 ];
 
@@ -59,15 +61,17 @@ export const digitalTeam = [
     id: 1,
     name: "Carle Aubert",
     role: "Co-Founder",
-    image: "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/9uxdyj7g_Aubert_photo.jpg",
-    credits: "Co-Founder"
+    image: "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/0coojn51_carleaubert.png",
+    credits: "Co-Founder",
+    bio: "With over 10 years of experience in feature film and episodic visual effects, Carle is a Senior VFX Compositor specializing in high-end compositing, CG integration, and photoreal image creation.\n\nDriven by a lifelong passion for cinematic storytelling, he began his creative career as a Video Director and Motion Designer, creating immersive visual experiences for museums and exhibitions before making the transition to feature film visual effects.\n\nHaving worked at leading studios including Sony Pictures Imageworks, Laika, Eyeline Studios, MPC, Method Studios, FuseFX, and Zoic Studios, he has contributed to a wide range of award-winning films and premium television productions.\n\nPassionate about both the artistic and technical sides of compositing, he enjoys solving complex visual challenges while developing efficient Nuke workflows that support production.\n\nKnown for his attention to detail, collaborative mindset, and calm approach under pressure, Carle is committed to delivering seamless visual effects that serve the story while maintaining the highest standards of quality."
   },
   {
     id: 2,
-    name: "Aymeric Ballister",
+    name: "Aymeric Ballester",
     role: "Co-Founder",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-    credits: "Co-Founder"
+    image: "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/l8ucf533_aymericballester.jpeg",
+    credits: "Co-Founder",
+    bio: "With over 10 years of experience in feature film visual effects, Aymeric is a VFX Compositor and Nuke Technical Director specializing in compositing, pipeline development, and workflow optimization.\n\nHaving worked at leading studios including DNEG and Eyeline Studios, he has contributed to Academy Award-winning productions such as First Man and Dune.\n\nCombining artistic expertise with technical innovation, he develops scalable Nuke tools, production workflows, and color management solutions that streamline complex pipelines while supporting creative excellence.\n\nKnown for his collaborative approach and practical problem-solving, Aymeric is committed to delivering reliable, efficient solutions that help productions achieve the highest standards of visual quality."
   }
 ];
 
