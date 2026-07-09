@@ -13,7 +13,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="md:col-span-2">
             <img
-              src="https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/4dx0bgm4_e0804916-7e47-4dc6-b7f7-acdc88203459.png"
+              src="https://customer-assets.emergentagent.com/job_52f5f95f-336b-4a77-a760-c8c98d488dc8/artifacts/yt7c9ahv_b6f6364c-a487-49e5-a865-d75768bb5256.png"
               alt="Ripple VFX Studios"
               className="h-20 w-auto mb-4"
               style={{ 
