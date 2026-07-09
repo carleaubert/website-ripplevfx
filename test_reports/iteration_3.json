@@ -1,0 +1,22 @@
+{
+  "summary": "Verified Ripple VFX About section on home page (VFX department is default). All 6 new paragraphs render with the correct content, styling (text-gray-400 on black background), scroll-animate + opacity-0 + translate-x-[-30px] classes, and IntersectionObserver-driven scroll animations trigger visible on all paragraphs as user scrolls.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "#about section exists and heading reads 'About Ripple VFX'",
+    "Exactly 6 <p> paragraphs rendered in #about",
+    "P1 starts with 'Ripple VFX was founded by Carle and Aymeric, two French artists...'",
+    "P2 contains 'Their journey began at MPC...'",
+    "P3 covers studio creation ('create something of their own')",
+    "P4 vision paragraph ('Ripple VFX was created with the vision...')",
+    "P5 mentions decade of experience / collaboration & problem-solving",
+    "P6 mission paragraph ('Their mission is to bring a fresh approach...')",
+    "All paragraphs have classes: scroll-animate, text-gray-400, opacity-0, translate-x-[-30px]",
+    "Computed color rgb(156,163,175) confirms text-gray-400 on black background",
+    "After scrolling through page, all 6 paragraphs gain 'visible' class and animate to opacity=1"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}

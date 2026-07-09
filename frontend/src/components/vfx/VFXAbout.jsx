@@ -36,20 +36,23 @@ const VFXAbout = () => {
             <h2 className="scroll-animate text-4xl md:text-6xl font-bold mb-6 opacity-0 translate-x-[-30px] hover:scale-105 transition-transform duration-500 inline-block">
               About Ripple VFX
             </h2>
-            <p className="scroll-animate text-xl text-gray-400 mb-6 leading-relaxed opacity-0 translate-x-[-30px]" style={{ transitionDelay: '0.1s' }}>
-              Ripple VFX is a state-of-the-art visual effects studio dedicated to pushing the
-              boundaries of what's possible in digital storytelling.
+            <p className="scroll-animate text-lg text-gray-400 mb-6 leading-relaxed opacity-0 translate-x-[-30px]" style={{ transitionDelay: '0.1s' }}>
+              Ripple VFX was founded by Carle and Aymeric, two French artists brought together by their passion for visual effects and cinematic storytelling.
+            </p>
+            <p className="scroll-animate text-lg text-gray-400 mb-6 leading-relaxed opacity-0 translate-x-[-30px]" style={{ transitionDelay: '0.15s' }}>
+              Their journey began at MPC, where they first met and started building a strong professional connection. Over the following decade, they continued to collaborate and grow their expertise while working at some of the industry's leading visual effects studios. Through different projects, teams, and creative challenges, they developed a deep understanding of what it takes to deliver high-quality visual effects in a demanding production environment.
             </p>
             <p className="scroll-animate text-lg text-gray-400 mb-6 leading-relaxed opacity-0 translate-x-[-30px]" style={{ transitionDelay: '0.2s' }}>
-              Based in the heart of the entertainment industry, we specialize in creating
-              stunning visual effects for feature films, episodic television, and high-end
-              commercial projects. Our team of award-winning artists and technicians brings
-              decades of combined experience to every project.
+              After years of experience across feature films and episodic productions, Carle and Aymeric decided to create something of their own — a studio built on their shared values, technical expertise, and commitment to excellence.
             </p>
-            <p className="scroll-animate text-lg text-gray-400 mb-8 leading-relaxed opacity-0 translate-x-[-30px]" style={{ transitionDelay: '0.3s' }}>
-              We believe in the power of collaboration, innovation, and technical excellence.
-              Our approach combines cutting-edge technology with artistic vision to deliver
-              results that exceed expectations and help tell unforgettable stories.
+            <p className="scroll-animate text-lg text-gray-400 mb-6 leading-relaxed opacity-0 translate-x-[-30px]" style={{ transitionDelay: '0.25s' }}>
+              Ripple VFX was created with the vision of bringing together artistic creativity, technical innovation, and efficient workflows to support modern visual effects production. Through their combined experience and shared knowledge of the visual effects industry, Carle and Aymeric have developed a strong understanding of both the creative and technical challenges behind complex productions. Their goal is to create a flexible and collaborative environment where expertise, innovation, and creativity come together to develop efficient workflows and deliver exceptional visual effects.
+            </p>
+            <p className="scroll-animate text-lg text-gray-400 mb-6 leading-relaxed opacity-0 translate-x-[-30px]" style={{ transitionDelay: '0.3s' }}>
+              More than just a VFX studio, Ripple VFX is built around collaboration, problem-solving, and a passion for finding smarter ways to create exceptional imagery. By combining over a decade of experience, a deep understanding of production pipelines, and a commitment to quality, they aim to be a reliable creative partner for productions of all sizes.
+            </p>
+            <p className="scroll-animate text-lg text-gray-400 mb-8 leading-relaxed opacity-0 translate-x-[-30px]" style={{ transitionDelay: '0.35s' }}>
+              Their mission is to bring a fresh approach to visual effects by creating strong partnerships, supporting artists, and delivering seamless imagery that serves the story while maintaining the highest standards of quality.
             </p>
           </div>
 
