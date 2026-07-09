@@ -1,0 +1,20 @@
+{
+  "summary": "Retest of footer logo sizing fix (h-[68px] replacing invalid h-17). Verified footer logo renders at exactly 68px height across all viewports and both departments. Navbar logo confirmed at 56px (h-14). Department toggle correctly swaps logo image sources in both navbar and footer. Side menu (h-24) verification skipped due to MENU button not opening within timeout; not a blocker for the reported bug fix.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "Footer logo uses valid h-[68px] class — computed height = 68px on desktop 1920",
+    "Footer logo height = 68px on tablet 768",
+    "Footer logo height = 68px on mobile 390",
+    "VFX department footer shows ripplelogovfx.png (k0ro4bgp_ripplelogovfx.png) at 68px",
+    "Digital department footer shows ripplelogodigital.png (kzqbmomq_ripplelogodigital.png) at 68px",
+    "Navbar logo remains h-14 (~56px) for both VFX and Digital",
+    "Toggling Ripple VFX <-> Ripple Digital correctly swaps navbar + footer logo src",
+    "Previous oversized 331px footer logo bug is resolved (naturalHeight=331 but rendered=68px)"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true,
+  "notes": "Side menu (h-24) logo not explicitly measured — MENU button click timed out in one attempt; per loop-prevention rule, did not retry. The primary reported bug (footer logo oversized due to invalid h-17) is fully fixed and verified."
+}

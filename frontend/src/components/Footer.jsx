@@ -18,7 +18,7 @@ const Footer = ({ activeDepartment }) => {
                 : "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/kzqbmomq_ripplelogodigital.png"
               }
               alt={activeDepartment === 'vfx' ? "Ripple VFX Studios" : "Ripple Digital Studios"}
-              className="h-17 w-auto mb-4"
+              className="h-[68px] w-auto mb-4"
             />
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
               Creating stunning visual effects and building modern digital solutions.
