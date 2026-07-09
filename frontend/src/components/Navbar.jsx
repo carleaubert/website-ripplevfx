@@ -55,12 +55,9 @@ const Navbar = ({ scrolled, activeDepartment, onDepartmentChange }) => {
             >
               <div className="relative">
                 <img
-                  src="https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/4dx0bgm4_e0804916-7e47-4dc6-b7f7-acdc88203459.png"
+                  src="https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/oyo52x80_ripplelogo2%20%282%29.png"
                   alt="Ripple VFX"
                   className="h-16 w-auto transition-all duration-500 group-hover:scale-110 group-hover:brightness-125"
-                  style={{ 
-                    mixBlendMode: 'screen'
-                  }}
                 />
                 <div className="absolute inset-0 blur-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
@@ -170,12 +167,9 @@ const Navbar = ({ scrolled, activeDepartment, onDepartmentChange }) => {
 
             <div className="mb-12 animate-in fade-in slide-in-from-right-10 duration-700">
               <img
-                src="https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/4dx0bgm4_e0804916-7e47-4dc6-b7f7-acdc88203459.png"
+                src="https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/oyo52x80_ripplelogo2%20%282%29.png"
                 alt="Ripple VFX"
                 className="h-28 w-auto"
-                style={{ 
-                  mixBlendMode: 'screen'
-                }}
               />
             </div>
 
