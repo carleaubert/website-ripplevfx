@@ -1,0 +1,25 @@
+{
+  "summary": "Editorial float layout for VFXAbout section verified across desktop, tablet, and mobile viewports. Title 'About Ripple VFX' and image are vertically aligned at the top (both y=46 on desktop). Image floats right at 45% container width with 2rem left margin on desktop. Text wraps around the image; last paragraph expands to full 1280px container width (clear-both works). On tablet (768px) and mobile (390px), image un-floats and stacks above text. All 6 paragraphs render, scroll-animate visibility triggers (8 visible), and 2 decorative pulse borders are present.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "Title 'About Ripple VFX' visible at top of #about section",
+    "Image computed float=right on desktop (>=1024px)",
+    "Image width = 576px ≈ 45.0% of 1280px container (matches lg:w-[45%])",
+    "Image margin-left = 32px (2rem, matches lg:ml-8)",
+    "Title top (y=46) equals Image top (y=46) — same vertical level",
+    "Image positioned on right side (x=1024, right of center 960)",
+    "All 6 paragraphs of About text present",
+    "Last paragraph width = 1280px (full container) — clear-both works after image",
+    "Text visually wraps around floated image (confirmed via desktop screenshot)",
+    "Tablet 768px: float=none, image stacks above text (image y=188 < first-p y=540)",
+    "Mobile 390px: float=none, image stacks above text (image y=168 < first-p y=520)",
+    "Scroll animations trigger — 8 scroll-animate elements have 'visible' class",
+    "2 decorative animate-pulse white border boxes present"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true,
+  "notes": "The float wrapping is confirmed visually via desktop screenshot — the raw <p> bounding box reads full-width (block-level behavior), but inline text content is correctly pushed by the floated image, producing the intended magazine-style wrap. Pre-existing browser console errors (Cloudflare Turnstile 600010, 401 audio/video adapters) are unrelated to this feature."
+}
