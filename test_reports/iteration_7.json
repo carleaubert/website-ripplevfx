@@ -1,0 +1,20 @@
+{
+  "summary": "Verified 10% logo size increase in header/navigation. Navbar logo renders at exactly 62px height (from 56px) and side menu logo at 106px (from 96px) across VFX and Digital departments. Footer logo intentionally unchanged at 68px. Aspect ratio, centering, and hover classes preserved.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "Desktop VFX navbar logo: 62px height, w-auto, class 'h-[62px] w-auto transition-all duration-500 group-hover:scale-110 group-hover:brightness-125' preserved",
+    "Desktop Digital navbar logo: 62px height after switching departments",
+    "Tablet (768x1024) navbar logo: 62px height",
+    "Mobile (390x844) navbar logo: 62px height",
+    "Side menu logo: 106px height with w-auto (aspect ratio maintained)",
+    "Vertical centering: symmetric top/bottom gap (25px each) in navbar",
+    "Department switcher (VFX <-> Digital) still functional",
+    "Footer logo unchanged at 68px (h-[68px] w-auto mb-4) as per requirement",
+    "Hover effects (group-hover:scale-110 group-hover:brightness-125) present on navbar logo"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}

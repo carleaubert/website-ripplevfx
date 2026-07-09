@@ -60,7 +60,7 @@ const Navbar = ({ scrolled, activeDepartment, onDepartmentChange }) => {
                     : "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/kzqbmomq_ripplelogodigital.png"
                   }
                   alt={activeDepartment === 'vfx' ? "Ripple VFX" : "Ripple Digital"}
-                  className="h-14 w-auto transition-all duration-500 group-hover:scale-110 group-hover:brightness-125"
+                  className="h-[62px] w-auto transition-all duration-500 group-hover:scale-110 group-hover:brightness-125"
                 />
                 <div className="absolute inset-0 blur-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
@@ -175,7 +175,7 @@ const Navbar = ({ scrolled, activeDepartment, onDepartmentChange }) => {
                   : "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/kzqbmomq_ripplelogodigital.png"
                 }
                 alt={activeDepartment === 'vfx' ? "Ripple VFX" : "Ripple Digital"}
-                className="h-24 w-auto"
+                className="h-[106px] w-auto"
               />
             </div>
 
