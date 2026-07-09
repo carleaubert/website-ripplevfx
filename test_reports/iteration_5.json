@@ -1,0 +1,30 @@
+{
+  "summary": "Tested department-specific logo replacement across navbar, side menu, and footer on desktop (1920), tablet (768), and mobile (390). Logos switch dynamically and load correctly. However, footer uses class `h-17` which does NOT exist in Tailwind's default scale and is not defined in tailwind.config.js — the footer logo therefore renders at its natural intrinsic size (~331px tall) instead of the intended ~68px.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "Initial page load; VFX department active by default",
+    "Navbar logo uses ripplelogovfx.png when VFX active and switches to ripplelogodigital.png when Digital clicked (dynamic switching works)",
+    "Navbar logo has correct `h-14` class and renders at 56px client height",
+    "Navbar logo has hover effects: `group-hover:scale-110 group-hover:brightness-125`",
+    "Side menu opens and shows correct department logo with `h-24` class (renders at 96px)",
+    "Footer logo src switches dynamically between VFX and Digital images",
+    "Both logo images load successfully (naturalWidth=322, complete=true) with no 404s",
+    "Responsive behavior verified: logos load and remain visible on tablet 768px and mobile 390px viewports",
+    "No error messages surfaced on the page during testing"
+  ],
+  "failed": [
+    {
+      "area": "Footer logo sizing",
+      "issue": "`h-17` class is not a valid Tailwind class and is not defined in /app/frontend/tailwind.config.js. As a result the footer <img> in /app/frontend/src/components/Footer.jsx has no effective height style and renders at its intrinsic size (~331px tall, computed height '331px'). This makes the footer logo enormously larger than intended (target was ~68px, ~15% smaller than the previous h-20).",
+      "evidence": "Locator footer img -> class='h-17 w-auto mb-4', clientHeight=331, computedHeight='331px'. Grep of tailwind.config.js and CSS files shows no '17' spacing key defined.",
+      "priority": "HIGH"
+    }
+  ],
+  "action_items": [
+    "Fix footer logo size in /app/frontend/src/components/Footer.jsx line 21: replace `h-17` with a valid Tailwind height class. To achieve the ~15% reduction from h-20 (80px), use `h-[68px]` (arbitrary value) or `h-16` (64px), or extend the theme.spacing scale in tailwind.config.js to add a '17' key (e.g., '17': '4.25rem').",
+    "After fix, retest that the footer logo renders at the intended small size on desktop, tablet, and mobile."
+  ],
+  "success_rate": {"backend": "not_tested", "frontend": "92%"},
+  "retest_needed": true,
+  "full_testing_deferred": true
+}

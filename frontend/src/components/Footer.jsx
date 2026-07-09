@@ -2,7 +2,7 @@ import React from 'react';
 import { Linkedin } from 'lucide-react';
 import { contactInfo } from '../mockData';
 
-const Footer = () => {
+const Footer = ({ activeDepartment }) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -13,9 +13,12 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="md:col-span-2">
             <img
-              src="https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/oyo52x80_ripplelogo2%20%282%29.png"
-              alt="Ripple VFX Studios"
-              className="h-20 w-auto mb-4"
+              src={activeDepartment === 'vfx' 
+                ? "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/k0ro4bgp_ripplelogovfx.png"
+                : "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/kzqbmomq_ripplelogodigital.png"
+              }
+              alt={activeDepartment === 'vfx' ? "Ripple VFX Studios" : "Ripple Digital Studios"}
+              className="h-17 w-auto mb-4"
             />
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
               Creating stunning visual effects and building modern digital solutions.
