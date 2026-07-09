@@ -15,10 +15,7 @@ const Footer = () => {
             <img
               src="https://customer-assets.emergentagent.com/job_52f5f95f-336b-4a77-a760-c8c98d488dc8/artifacts/yt7c9ahv_b6f6364c-a487-49e5-a865-d75768bb5256.png"
               alt="Ripple VFX Studios"
-              className="h-20 w-auto mb-4"
-              style={{ 
-                mixBlendMode: 'screen'
-              }}
+              className="h-24 w-auto mb-4 invert"
             />
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
               Creating stunning visual effects and building modern digital solutions.

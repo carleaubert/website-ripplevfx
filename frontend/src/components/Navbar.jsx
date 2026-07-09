@@ -57,10 +57,7 @@ const Navbar = ({ scrolled, activeDepartment, onDepartmentChange }) => {
                 <img
                   src="https://customer-assets.emergentagent.com/job_52f5f95f-336b-4a77-a760-c8c98d488dc8/artifacts/yt7c9ahv_b6f6364c-a487-49e5-a865-d75768bb5256.png"
                   alt="Ripple VFX"
-                  className="h-16 w-auto transition-all duration-500 group-hover:scale-110 group-hover:brightness-125"
-                  style={{ 
-                    mixBlendMode: 'screen'
-                  }}
+                  className="h-20 w-auto transition-all duration-500 group-hover:scale-110 group-hover:brightness-125 invert"
                 />
                 <div className="absolute inset-0 blur-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
@@ -172,10 +169,7 @@ const Navbar = ({ scrolled, activeDepartment, onDepartmentChange }) => {
               <img
                 src="https://customer-assets.emergentagent.com/job_52f5f95f-336b-4a77-a760-c8c98d488dc8/artifacts/yt7c9ahv_b6f6364c-a487-49e5-a865-d75768bb5256.png"
                 alt="Ripple VFX"
-                className="h-28 w-auto"
-                style={{ 
-                  mixBlendMode: 'screen'
-                }}
+                className="h-32 w-auto invert"
               />
             </div>
 

@@ -1,0 +1,19 @@
+{
+  "summary": "Frontend-only visual verification of new RIPPLE VFX logo across navbar, side menu, and footer. All three logo instances load correctly with the correct src URL, dimensions, and 'invert' CSS class applied. Logo also remains visible when switching to Ripple Digital department.",
+  "tested_scope": ["frontend", "integration"],
+  "passed": [
+    "Navbar logo loads (naturalWidth=1536, h-20 w-auto invert, box=120x80 at top-left)",
+    "Navbar logo hover applied without error (scale-110 brightness-125 classes present)",
+    "Footer logo loads (naturalWidth=1536, h-24 w-auto invert, box=144x96)",
+    "Side menu logo loads after clicking MENU (naturalWidth=1536, h-32 w-auto invert, box=192x128)",
+    "Screenshots visually confirm RIPPLE VFX logo with ripple graphic is rendered in all 3 locations (black-on-white via invert filter)",
+    "Navbar logo remains visible after switching to Ripple Digital department",
+    "All 3 img elements use the same customer-assets URL (yt7c9ahv_b6f6364c-a487-49e5-a865-d75768bb5256.png)"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true,
+  "notes": "Backend testing was skipped per request. Emergent security overlay appeared briefly during initial page load (blocking networkidle) but did not affect logo rendering. Test credentials not required for this UI-only test."
+}
