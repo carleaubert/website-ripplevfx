@@ -1,0 +1,20 @@
+{
+  "summary": "Verified header logo resize to h-[70px] (from h-[62px], ~12.9% increase) across VFX/Digital and 3 viewports. Side menu (106px) and Footer (68px) logos confirmed unchanged. Vertical centering and aspect ratio preserved. Department switcher functional.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "Desktop 1920: header logo renders 70.0px height, class contains h-[70px] and w-auto",
+    "VFX -> Digital switch swaps logo src; new alt='Ripple Digital', height=70.0px",
+    "Tablet 768: header logo height=70.0px",
+    "Mobile 390: header logo height=70.0px",
+    "Logo vertically centered in navbar (top_gap=bottom_gap=24px)",
+    "Side menu logo unchanged at 106.0px with class h-[106px]",
+    "Footer logo unchanged at 68.0px with class h-[68px]",
+    "Department switcher (Ripple VFX / Ripple Digital) clickable and functional",
+    "Aspect ratio preserved (w-auto, natural width ~175px for 70px height)"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
