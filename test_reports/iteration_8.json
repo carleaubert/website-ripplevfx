@@ -1,0 +1,19 @@
+{
+  "summary": "Verified header/navbar logo replacement with new horizontal versions. Header logos load correctly (nnvwlmc0_ripplelogohovfx.png for VFX, n3gbxvzr_ripplelogohodigital.png for Digital). Footer and side menu logos remain unchanged (k0ro4bgp/kzqbmomq vertical logos). Toggling VFX <-> Digital swaps header logo correctly. Sizing (h-[62px]), hover classes (scale-110, brightness-125), and layout preserved. Header logo visible on desktop (1920px), tablet (768px), and mobile (390px).",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "VFX header logo src = nnvwlmc0_ripplelogohovfx.png.png (loaded, naturalWidth=756)",
+    "Digital header logo src = n3gbxvzr_ripplelogohodigital.png.png (loaded, naturalWidth=756)",
+    "Header logo class contains h-[62px] w-auto (size unchanged)",
+    "Hover classes group-hover:scale-110 and group-hover:brightness-125 preserved",
+    "Toggle VFX -> Digital -> VFX swaps header logo correctly",
+    "Footer logo unchanged (still k0ro4bgp_ripplelogovfx.png vertical)",
+    "Side menu logo unchanged (still k0ro4bgp_ripplelogovfx.png vertical, h-[106px])",
+    "Header logo visible on desktop 1920px, tablet 768px, mobile 390px"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}

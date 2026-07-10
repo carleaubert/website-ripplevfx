@@ -56,8 +56,8 @@ const Navbar = ({ scrolled, activeDepartment, onDepartmentChange }) => {
               <div className="relative">
                 <img
                   src={activeDepartment === 'vfx' 
-                    ? "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/k0ro4bgp_ripplelogovfx.png"
-                    : "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/kzqbmomq_ripplelogodigital.png"
+                    ? "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/nnvwlmc0_ripplelogohovfx.png.png"
+                    : "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/n3gbxvzr_ripplelogohodigital.png.png"
                   }
                   alt={activeDepartment === 'vfx' ? "Ripple VFX" : "Ripple Digital"}
                   className="h-[62px] w-auto transition-all duration-500 group-hover:scale-110 group-hover:brightness-125"
