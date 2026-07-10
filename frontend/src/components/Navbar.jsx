@@ -60,9 +60,8 @@ const Navbar = ({ scrolled, activeDepartment, onDepartmentChange }) => {
                     : "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/n3gbxvzr_ripplelogohodigital.png.png"
                   }
                   alt={activeDepartment === 'vfx' ? "Ripple VFX" : "Ripple Digital"}
-                  className="h-[70px] w-auto transition-all duration-500 group-hover:scale-110 group-hover:brightness-125"
+                  className="h-[70px] w-auto"
                 />
-                <div className="absolute inset-0 blur-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             </a>
 

@@ -1,0 +1,21 @@
+{
+  "summary": "Verified header logo changes on Navbar: correct horizontal assets are used (VFX: nnvwlmc0_ripplelogohovfx.png.png, Digital: n3gbxvzr_ripplelogohodigital.png.png). All hover effects removed - img class is exactly 'h-[70px] w-auto' with no transition/scale/brightness/group-hover. No blur glow div inside logo anchor. Bounding box, computed transform ('none') and filter ('none') are identical before and after hover, so logo is visually static. Height = 70px preserved. Logo still clickable and triggers hero scroll. Department switch updates logo correctly. Side-menu logo unchanged (still uses kzqbmomq vertical Digital logo).",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "VFX header logo src = nnvwlmc0_ripplelogohovfx.png.png",
+    "Digital header logo src = n3gbxvzr_ripplelogohodigital.png.png",
+    "img class exactly 'h-[70px] w-auto' (no hover/transition classes)",
+    "0 blur elements inside logo anchor",
+    "Bounding box unchanged on hover (175.22 x 70 before and after)",
+    "Computed transform stays 'none' and filter stays 'none' on hover",
+    "Header logo height = 70px",
+    "Logo click keeps URL on root (scrolls to #hero, no navigation)",
+    "Department switcher toggles logo between VFX and Digital horizontal versions",
+    "Side-menu logo still uses original vertical Digital asset (kzqbmomq_ripplelogodigital.png)"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "not tested", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
