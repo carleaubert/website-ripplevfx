@@ -1,0 +1,19 @@
+{
+  "summary": "Verified header logo replacement on Navbar. New VFX (1tz9gzuc_ripplelogohovfx.png.png) and Digital (h5koig8q_ripplelogohodigital.png.png) logos load with 200 status, render at exactly 100px height with w-auto aspect ratio (natural 1134x302), and switch correctly via the department toggle. Footer still uses the old vertical logo (kzqbmomq_ripplelogodigital.png) - unchanged as required. Logo click scrolls to #hero. Responsive verified at 1920px, 768px, and 390px viewports - height stays 100px in all cases.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "VFX header logo uses new ripplelogohovfx URL and loads (naturalWidth=1134, complete=true)",
+    "Digital header logo uses new ripplelogohodigital URL and loads (naturalWidth=1134, complete=true)",
+    "Header logo renders at 100px height with h-[100px] w-auto classes",
+    "Department switcher toggles between VFX and Digital header logos",
+    "No 404 errors on either header logo asset",
+    "Footer logo unchanged (still uses kzqbmomq_ripplelogodigital.png vertical logo)",
+    "Logo click navigates to #hero (scrollY=0)",
+    "Responsive: 100px height maintained at 1920x1080, 768x1024, and 390x844"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "n/a (skipped)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
