@@ -60,7 +60,7 @@ const Navbar = ({ scrolled, activeDepartment, onDepartmentChange }) => {
                     : "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/n3gbxvzr_ripplelogohodigital.png.png"
                   }
                   alt={activeDepartment === 'vfx' ? "Ripple VFX" : "Ripple Digital"}
-                  className="h-[70px] w-auto"
+                  className="h-[85px] w-auto"
                 />
               </div>
             </a>

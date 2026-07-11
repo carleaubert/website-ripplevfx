@@ -1,0 +1,22 @@
+{
+  "summary": "Frontend-only verification of header logo size increase from 70px to 85px (+21%). All 11 checks passed across desktop (1920), tablet (768), and mobile (390) viewports.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "Desktop logo renders at exactly 85px height (measured 85.0, width 212.78)",
+    "VFX header logo displays at 85px with correct src (ripplelogohovfx)",
+    "Digital header logo displays at 85px after department switch (ripplelogohodigital)",
+    "Aspect ratio maintained via w-auto (2.503 identical across viewports)",
+    "Logo does not overlap menu button (logo_right=428.78, menu_left=1649.59)",
+    "Tablet 768px: logo fits at 85px (right edge=236.78)",
+    "Mobile 390px: logo fits within viewport at 85px (right edge=236.78)",
+    "No hover: classes present on logo img element (class='h-[85px] w-auto')",
+    "Department switcher functional (VFX <-> Digital swaps logo src)",
+    "Logo anchor clickable and navigates to #hero",
+    "Class attribute confirmed as 'h-[85px] w-auto' on live DOM"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "not_tested", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
