@@ -1,0 +1,22 @@
+{
+  "summary": "Logo increased to h-[100px] verified across desktop (1365), tablet (768), and mobile (390) viewports. Logo renders at exactly 100px height with aspect ratio maintained (natural 756x302 -> rendered 250.33x100). No horizontal overflow on any viewport. Logo click navigates to #hero (URL updates), and department switcher (VFX/Digital) correctly swaps logo image src. Aspect ratio math confirmed: expected 250.33 = actual 250.33.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "Header logo displays at exactly 100px height on desktop/tablet/mobile",
+    "VFX + Digital logo images load and display",
+    "Aspect ratio maintained via w-auto (250.33 x 100, ratio matches natural 756:302)",
+    "No horizontal overflow at 1365 / 768 / 390 viewports (logo right edge = 274px, well within 390 mobile viewport)",
+    "Logo click scrolls/navigates to #hero",
+    "Department switcher toggles logo image between VFX and Digital",
+    "No JS console errors observed during interactions"
+  ],
+  "failed": [],
+  "observations": [
+    "On tablet 768px, the centered desktop department switcher pill sits very close to the logo (logo ends at x=274, switcher starts near x=268) — visually crowded but not overlapping/breaking. Consider hiding desktop switcher below a slightly higher breakpoint if desired.",
+    "Mobile shows the md:hidden secondary switcher below the logo row as intended; layout intact."
+  ],
+  "action_items": [],
+  "success_rate": {"backend": "n/a (skipped per request)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
