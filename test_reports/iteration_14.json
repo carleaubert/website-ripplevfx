@@ -1,0 +1,20 @@
+{
+  "summary": "Verified Navbar logo reverted from h-[100px] to h-16 (64px). Both VFX & Digital logos render at 64px height with maintained aspect ratio (w-auto). Department switcher swaps logo correctly. Logo click href=#hero. No layout overflow on desktop/tablet/mobile.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "Desktop 1920x1080: logo height=64px, width=240.31px, class='h-16 w-auto'",
+    "Tablet 768x1024: logo height=64px",
+    "Mobile 390x844: logo height=64px",
+    "VFX logo src uses 1tz9gzuc asset",
+    "Digital logo src uses h5koig8q asset",
+    "Department switcher click swaps VFX -> Digital logo, still h-16",
+    "Logo anchor href=#hero (clickable)",
+    "No horizontal overflow at desktop or mobile",
+    "Logo remains legible at 64px (visible in screenshots)"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
