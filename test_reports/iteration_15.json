@@ -1,0 +1,19 @@
+{
+  "summary": "Frontend-only verification of new header logo URLs in Navbar. Verified VFX and Digital header logos load from the new asset URLs, render at h-16 (64px) with w-auto aspect ratio, toggle correctly via department switcher, are clickable to #hero, and remain sized correctly across desktop/tablet/mobile viewports. Footer logo unchanged.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "VFX header logo src = w6fuawec_ripplelogohovfx.png.png (loaded, natural 1134x302)",
+    "Digital header logo src = pucs5x0a_ripplelogohodigital.png.png (loaded, natural 1134x?)",
+    "Header logo classes contain h-16 w-auto (rendered height = 64px exactly)",
+    "No 404/network errors for logo requests",
+    "Department switcher toggles logo between VFX <-> Digital",
+    "Logo clickable (scrollY=0 after click, #hero anchor)",
+    "Responsive: 64px height maintained at 1920, 768, 390 viewports",
+    "Footer logo unchanged (still k0ro4bgp_ripplelogovfx.png)"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
