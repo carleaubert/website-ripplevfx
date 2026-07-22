@@ -15,8 +15,8 @@ const Footer = ({ activeDepartment }) => {
           <div className="md:col-span-2">
             <img
               src={activeDepartment === 'vfx' 
-                ? "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/k0ro4bgp_ripplelogovfx.png"
-                : "https://customer-assets.emergentagent.com/job_ripple-fx-studio/artifacts/kzqbmomq_ripplelogodigital.png"
+                ? "/assets/logos/ripple-vfx-logo.png"
+                : "/assets/logos/ripple-digital-logo.png"
               }
               alt={activeDepartment === 'vfx' ? "Ripple VFX Studios" : "Ripple Digital Studios"}
               className="h-[68px] w-auto mb-4"
