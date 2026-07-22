@@ -129,7 +129,7 @@ const Contact = () => {
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Your company name"
-                    className="bg-black/50 border-gray-700 focus:border-white transition-colors"
+                    className="bg-black/50 border-gray-700 focus:border-white transition-colors text-white placeholder:text-gray-400"
                   />
                 </div>
 
@@ -145,7 +145,7 @@ const Contact = () => {
                     required
                     placeholder="Tell us about your project..."
                     rows={6}
-                    className="bg-black/50 border-gray-700 focus:border-white transition-colors resize-none"
+                    className="bg-black/50 border-gray-700 focus:border-white transition-colors resize-none text-white placeholder:text-gray-400"
                   />
                 </div>
 
