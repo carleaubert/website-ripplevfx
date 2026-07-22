@@ -65,7 +65,7 @@ const Hero = () => {
               pointerEvents: 'none'
             }}
           >
-            <source src="https://customer-assets-7cd3h4nn.emergentagent.net/job_ripple-fx-studio/artifacts/9yzvound_webiste_demoreel_2026_ripple.mp4" type="video/mp4" />
+            <source src="/assets/videos/presentation-reel.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -181,9 +181,9 @@ const Hero = () => {
               autoPlay
               className="w-full rounded-lg shadow-2xl"
               style={{ objectFit: 'contain' }}
-              src="https://customer-assets-7cd3h4nn.emergentagent.net/job_ripple-fx-studio/artifacts/hx0nabz1_demoreel_2026_ripple.mp4"
+              src="/assets/videos/demo-reel.mp4"
             >
-              <source src="https://customer-assets-7cd3h4nn.emergentagent.net/job_ripple-fx-studio/artifacts/hx0nabz1_demoreel_2026_ripple.mp4" type="video/mp4" />
+              <source src="/assets/videos/demo-reel.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
