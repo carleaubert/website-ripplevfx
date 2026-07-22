@@ -45,14 +45,12 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Video Background */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden bg-black">
         {/* MP4 Video Background */}
         <div 
-          className="absolute w-full h-full"
+          className="absolute w-full h-full flex items-center justify-center"
           style={{ 
             transform: `translateY(${parallaxOffset * 0.2}px)`,
-            minWidth: '100%',
-            minHeight: '100%'
           }}
         >
           <video
@@ -61,13 +59,9 @@ const Hero = () => {
             muted
             playsInline
             style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              width: '100vw',
-              height: '100vh',
-              objectFit: 'cover',
-              transform: 'translate(-50%, -50%) scale(1.2)',
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
               pointerEvents: 'none'
             }}
           >
@@ -179,13 +173,14 @@ const Hero = () => {
             <X className="w-8 h-8" />
           </button>
           <div 
-            className="relative w-full max-w-6xl mx-4 aspect-video"
+            className="relative w-full max-w-6xl mx-4"
             onClick={(e) => e.stopPropagation()}
           >
             <video
               controls
               autoPlay
-              className="w-full h-full rounded-lg shadow-2xl"
+              className="w-full rounded-lg shadow-2xl"
+              style={{ objectFit: 'contain' }}
               src="https://customer-assets-7cd3h4nn.emergentagent.net/job_ripple-fx-studio/artifacts/hx0nabz1_demoreel_2026_ripple.mp4"
             >
               <source src="https://customer-assets-7cd3h4nn.emergentagent.net/job_ripple-fx-studio/artifacts/hx0nabz1_demoreel_2026_ripple.mp4" type="video/mp4" />
