@@ -43,7 +43,7 @@ const VFXAbout = () => {
               <img
                 ref={imageRef}
                 src="https://images.unsplash.com/photo-1632187981988-40f3cbaeef5e"
-                alt="VFX Studio"
+                alt="Ripple VFX Studios - Professional VFX compositing and visual effects production studio in Vancouver, Canada"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />

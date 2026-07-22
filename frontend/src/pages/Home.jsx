@@ -4,6 +4,7 @@ import VFXDepartment from '../components/departments/VFXDepartment';
 import DigitalDepartment from '../components/departments/DigitalDepartment';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import StructuredData from '../components/StructuredData';
 
 const Home = () => {
   const [activeDepartment, setActiveDepartment] = useState('vfx'); // 'vfx' or 'digital'
@@ -57,6 +58,9 @@ const Home = () => {
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
+
+      {/* Structured Data for SEO */}
+      <StructuredData department={activeDepartment} />
 
       <Navbar 
         scrolled={scrolled} 

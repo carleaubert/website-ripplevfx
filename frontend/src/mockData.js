@@ -108,33 +108,33 @@ export const vfxServices = [
 export const digitalServices = [
   {
     icon: "Globe",
-    title: "Website Creation",
-    description: "Modern, responsive websites built with cutting-edge technologies to elevate your online presence."
+    title: "Web Development Vancouver",
+    description: "Modern, responsive website development and custom web applications built with cutting-edge technologies to elevate your online presence."
   },
   {
     icon: "Smartphone",
-    title: "App Creation",
-    description: "Custom mobile and web applications designed to deliver seamless user experiences."
+    title: "Mobile App Development",
+    description: "Custom mobile and web application development for iOS and Android designed to deliver seamless user experiences and business value."
   },
   {
     icon: "Cpu",
-    title: "AI Tools",
-    description: "Intelligent automation and AI-powered solutions to transform your business operations."
+    title: "AI Development & Automation",
+    description: "Intelligent AI-powered solutions, business automation, and machine learning tools to transform your operations and drive innovation."
   },
   {
     icon: "Building",
-    title: "Rental Websites",
-    description: "Complete rental management platforms with booking systems, payment processing, and analytics."
+    title: "SaaS Platform Development",
+    description: "Complete SaaS and rental management platforms with booking systems, payment processing, analytics, and scalable infrastructure."
   },
   {
     icon: "Sparkles",
-    title: "AI Agency",
-    description: "Full-service AI consulting and implementation to help you leverage artificial intelligence."
+    title: "AI Solutions for Business",
+    description: "Full-service AI consulting, implementation, and custom AI tool development to help your business leverage artificial intelligence effectively."
   },
   {
     icon: "Palette",
-    title: "Graphic Design",
-    description: "Professional visual design services including branding, marketing materials, and digital assets."
+    title: "Digital Product Design",
+    description: "Professional UI/UX design, branding, digital marketing materials, and product design services for web and mobile applications."
   }
 ];
 
