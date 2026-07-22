@@ -273,8 +273,8 @@ const Careers = () => {
               <div className="mt-8 pt-8 border-t border-white/10">
                 <p className="text-gray-400 text-center">
                   You can also email your application directly to{' '}
-                  <a href="mailto:careers@ripplevfxstudios.com" className="text-blue-400 hover:underline">
-                    careers@ripplevfxstudios.com
+                  <a href="mailto:career@ripplevfxstudios.com" className="text-blue-400 hover:underline">
+                    career@ripplevfxstudios.com
                   </a>
                 </p>
               </div>
