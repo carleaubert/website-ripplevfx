@@ -79,28 +79,28 @@ export const digitalTeam = [
 export const vfxServices = [
   {
     icon: "Film",
-    title: "Compositing",
-    description: "Seamless integration of CGI elements with live-action footage using industry-leading techniques."
+    title: "Nuke Compositing",
+    description: "Expert Nuke compositing services with seamless integration of CGI elements and live-action footage using industry-leading VFX techniques."
   },
   {
     icon: "Layers",
     title: "Digital Matte Painting",
-    description: "Stunning environment extensions and background replacements with cinematic quality."
+    description: "Stunning digital matte painting for environment extensions and photoreal background replacements with cinematic quality."
   },
   {
     icon: "Palette",
     title: "Color Grading",
-    description: "Professional color correction and grading to achieve the perfect cinematic look."
+    description: "Professional color correction and grading services to achieve the perfect cinematic look for feature films and episodic content."
   },
   {
     icon: "Sparkles",
     title: "Motion Graphics",
-    description: "Dynamic motion design for titles, UI elements, and broadcast graphics."
+    description: "Dynamic motion graphics design for titles, UI elements, broadcast graphics, and commercial VFX production."
   },
   {
     icon: "Cpu",
-    title: "AI Tools",
-    description: "We leverage AI-powered tools to streamline repetitive tasks, accelerate production, and improve efficiency while maintaining the highest creative quality throughout the VFX pipeline."
+    title: "AI Creative Studio",
+    description: "We leverage AI-powered tools and creative solutions to streamline workflows, accelerate production, and deliver innovative VFX while maintaining the highest quality standards."
   }
 ];
 
