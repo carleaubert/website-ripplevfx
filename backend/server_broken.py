@@ -120,6 +120,29 @@ async def get_status_checks(
     
     return status_checks
 
+# Include the router in the main app
+app.include_router(api_router)
+
+# Add Security Headers Middleware
+app.add_middleware(SecurityHeadersMiddleware)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_credentials=True,
+    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+
+
 # Pydantic Models for Forms
 class ContactFormSubmission(BaseModel):
     name: str
@@ -244,30 +267,6 @@ async def submit_careers_form(submission: CareersFormSubmission):
     except Exception as e:
         logging.error(f"Careers form error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to submit application. Please try again later.")
-
-# Include the router in the main app
-app.include_router(api_router)
-
-# Add Security Headers Middleware
-app.add_middleware(SecurityHeadersMiddleware)
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
-
-
-
 
 @app.on_event("shutdown")
 async def shutdown_db_client() -> None:
