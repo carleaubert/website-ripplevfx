@@ -57,11 +57,11 @@ const DigitalServices = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {digitalServices.map((service, index) => {
+          {digitalServices.map((service) => {
             const IconComponent = iconMap[service.icon];
             return (
               <Card
-                key={index}
+                key={service.id}
                 className="service-card group bg-gray-900/50 border-gray-800 hover:border-gray-600 transition-all duration-500 p-8 opacity-0 translate-y-10 hover:scale-105 hover:bg-gray-900/80 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

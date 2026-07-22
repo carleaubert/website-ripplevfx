@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, Send, Briefcase, Users, Zap, Heart } from 'lucide-react';
 import { toast } from 'sonner';
 
+const SUBMISSION_DELAY_MS = 1500;
+
 const Careers = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -27,7 +29,7 @@ const Careers = () => {
     try {
       // In a production environment, this would send to a backend endpoint
       // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      await new Promise(resolve => setTimeout(resolve, SUBMISSION_DELAY_MS));
       
       toast.success('Application submitted successfully! We\'ll be in touch soon.');
       setFormData({
@@ -46,21 +48,25 @@ const Careers = () => {
 
   const values = [
     {
+      id: 'collaboration',
       icon: <Users className="w-8 h-8" />,
       title: 'Collaboration',
       description: 'Work with talented artists and technologists in a supportive environment'
     },
     {
+      id: 'innovation',
       icon: <Zap className="w-8 h-8" />,
       title: 'Innovation',
       description: 'Push boundaries with cutting-edge VFX technology and AI-powered workflows'
     },
     {
+      id: 'passion',
       icon: <Heart className="w-8 h-8" />,
       title: 'Passion',
       description: 'Join a team that loves what they do and takes pride in every project'
     },
     {
+      id: 'growth',
       icon: <Briefcase className="w-8 h-8" />,
       title: 'Growth',
       description: 'Develop your skills and grow your career with challenging, diverse projects'
@@ -93,9 +99,9 @@ const Careers = () => {
 
           {/* Why Join Us */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-            {values.map((value, index) => (
+            {values.map((value) => (
               <div 
-                key={index}
+                key={value.id}
                 className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300"
               >
                 <div className="text-white mb-4">{value.icon}</div>

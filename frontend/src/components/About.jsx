@@ -86,11 +86,11 @@ const About = () => {
             Our Core Values
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {values.map((value, index) => (
+            {values.map((value) => (
               <div
-                key={index}
+                key={value}
                 className="scroll-animate group text-center p-6 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-500 cursor-pointer opacity-0 translate-y-10 hover:scale-110 hover:shadow-2xl hover:shadow-white/10 relative overflow-hidden"
-                style={{ transitionDelay: `${index * 0.1}s` }}
+                style={{ transitionDelay: `${values.indexOf(value) * 0.1}s` }}
               >
                 {/* Background shine effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

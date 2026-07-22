@@ -2,6 +2,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Button } from './ui/button';
 import { Play, ChevronDown, Sparkles } from 'lucide-react';
 
+const MOUSE_MOVEMENT_FACTOR = 30;
+const PARALLAX_SPEED = 15;
+
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
@@ -10,8 +13,8 @@ const Hero = () => {
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({
-        x: (e.clientX / window.innerWidth - 0.5) * 30,
-        y: (e.clientY / window.innerHeight - 0.5) * 30
+        x: (e.clientX / window.innerWidth - 0.5) * MOUSE_MOVEMENT_FACTOR,
+        y: (e.clientY / window.innerHeight - 0.5) * MOUSE_MOVEMENT_FACTOR
       });
     };
 

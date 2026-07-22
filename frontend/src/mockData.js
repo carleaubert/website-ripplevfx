@@ -78,26 +78,31 @@ export const digitalTeam = [
 // Ripple VFX Services
 export const vfxServices = [
   {
+    id: "nuke-compositing",
     icon: "Film",
     title: "Nuke Compositing",
     description: "Expert Nuke compositing services with seamless integration of CGI elements and live-action footage using industry-leading VFX techniques."
   },
   {
+    id: "digital-matte-painting",
     icon: "Layers",
     title: "Digital Matte Painting",
     description: "Stunning digital matte painting for environment extensions and photoreal background replacements with cinematic quality."
   },
   {
+    id: "color-grading",
     icon: "Palette",
     title: "Color Grading",
     description: "Professional color correction and grading services to achieve the perfect cinematic look for feature films and episodic content."
   },
   {
+    id: "motion-graphics",
     icon: "Sparkles",
     title: "Motion Graphics",
     description: "Dynamic motion graphics design for titles, UI elements, broadcast graphics, and commercial VFX production."
   },
   {
+    id: "ai-creative-studio",
     icon: "Cpu",
     title: "AI Creative Studio",
     description: "We leverage AI-powered tools and creative solutions to streamline workflows, accelerate production, and deliver innovative VFX while maintaining the highest quality standards."
@@ -107,31 +112,37 @@ export const vfxServices = [
 // Ripple Digital Services
 export const digitalServices = [
   {
+    id: "web-development",
     icon: "Globe",
     title: "Web Development Vancouver",
     description: "Modern, responsive website development and custom web applications built with cutting-edge technologies to elevate your online presence."
   },
   {
+    id: "mobile-app-development",
     icon: "Smartphone",
     title: "Mobile App Development",
     description: "Custom mobile and web application development for iOS and Android designed to deliver seamless user experiences and business value."
   },
   {
+    id: "ai-development",
     icon: "Cpu",
     title: "AI Development & Automation",
     description: "Intelligent AI-powered solutions, business automation, and machine learning tools to transform your operations and drive innovation."
   },
   {
+    id: "saas-platform",
     icon: "Building",
     title: "SaaS Platform Development",
     description: "Complete SaaS and rental management platforms with booking systems, payment processing, analytics, and scalable infrastructure."
   },
   {
+    id: "ai-solutions",
     icon: "Sparkles",
     title: "AI Solutions for Business",
     description: "Full-service AI consulting, implementation, and custom AI tool development to help your business leverage artificial intelligence effectively."
   },
   {
+    id: "digital-product-design",
     icon: "Palette",
     title: "Digital Product Design",
     description: "Professional UI/UX design, branding, digital marketing materials, and product design services for web and mobile applications."
@@ -150,3 +161,13 @@ export const contactInfo = {
     country: "Canada"
   }
 };
+
+// Core values
+export const values = [
+  "Excellence",
+  "Innovation",
+  "Collaboration",
+  "Integrity",
+  "Creativity",
+  "Passion"
+];

@@ -18,7 +18,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
     toast({
       title: "Message Sent!",
       description: "Thank you for reaching out. We'll get back to you soon.",

@@ -15,11 +15,11 @@ const Clients = () => {
 
         {/* Clients Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          {clients.map((client, index) => (
+          {clients.map((client) => (
             <div
-              key={index}
+              key={client.name}
               className="flex items-center justify-center p-8 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 group animate-in fade-in slide-in-from-bottom-5"
-              style={{ animationDelay: `${index * 50}ms` }}
+              style={{ animationDelay: `${clients.indexOf(client) * 50}ms` }}
             >
               <div className="text-center">
                 <div className="text-4xl font-bold text-white/80 group-hover:text-white group-hover:scale-110 transition-all duration-300">
