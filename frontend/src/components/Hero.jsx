@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Button } from './ui/button';
-import { Play, ChevronDown, Sparkles } from 'lucide-react';
+import { Play, ChevronDown, Sparkles, X } from 'lucide-react';
 
 const MOUSE_MOVEMENT_FACTOR = 30;
 const PARALLAX_SPEED = 15;
@@ -8,6 +8,7 @@ const PARALLAX_SPEED = 15;
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
+  const [showReelModal, setShowReelModal] = useState(false);
   const heroRef = useRef(null);
 
   useEffect(() => {
@@ -45,7 +46,7 @@ const Hero = () => {
     >
       {/* Video Background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Vimeo Video embed - full screen background */}
+        {/* MP4 Video Background */}
         <div 
           className="absolute w-full h-full"
           style={{ 
@@ -54,21 +55,25 @@ const Hero = () => {
             minHeight: '100%'
           }}
         >
-          <iframe
-            src="https://player.vimeo.com/video/452932852?background=1&autoplay=1&loop=1&autopause=0&muted=1&quality=1080p"
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             style={{
               position: 'absolute',
               top: '50%',
               left: '50%',
               width: '100vw',
               height: '100vh',
+              objectFit: 'cover',
               transform: 'translate(-50%, -50%) scale(1.2)',
               pointerEvents: 'none'
             }}
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            title="VFX Reel Background"
-          />
+          >
+            <source src="https://customer-assets-7cd3h4nn.emergentagent.net/job_ripple-fx-studio/artifacts/hx0nabz1_demoreel_2026_ripple.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
         
         {/* Dark overlay for better text readability */}
@@ -127,7 +132,7 @@ const Hero = () => {
           <Button
             size="lg"
             className="bg-white text-black hover:bg-white/90 transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-white/20 group relative overflow-hidden animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-900"
-            onClick={() => alert('Demo reel would play here - currently mocked')}
+            onClick={() => setShowReelModal(true)}
           >
             {/* Shine effect */}
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
@@ -159,6 +164,36 @@ const Hero = () => {
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
+
+      {/* Demo Reel Modal */}
+      {showReelModal && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm"
+          onClick={() => setShowReelModal(false)}
+        >
+          <button
+            onClick={() => setShowReelModal(false)}
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors p-2 z-10"
+            aria-label="Close modal"
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <div 
+            className="relative w-full max-w-6xl mx-4 aspect-video"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              controls
+              autoPlay
+              className="w-full h-full rounded-lg shadow-2xl"
+              src="https://customer-assets-7cd3h4nn.emergentagent.net/job_ripple-fx-studio/artifacts/hx0nabz1_demoreel_2026_ripple.mp4"
+            >
+              <source src="https://customer-assets-7cd3h4nn.emergentagent.net/job_ripple-fx-studio/artifacts/hx0nabz1_demoreel_2026_ripple.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
