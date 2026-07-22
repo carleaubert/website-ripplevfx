@@ -19,7 +19,7 @@ const TermsOfService = () => {
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-6 max-w-4xl">
           <h1 className="text-5xl md:text-6xl font-bold mb-8">Terms of Service</h1>
-          <p className="text-gray-400 mb-12">Last updated: January 14, 2025</p>
+          <p className="text-gray-400 mb-12">Last updated: July 21, 2026</p>
 
           <div className="space-y-8 text-gray-300 leading-relaxed">
             {/* Introduction */}
