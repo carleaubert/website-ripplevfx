@@ -234,7 +234,9 @@ const Navbar = ({ scrolled, activeDepartment, onDepartmentChange }) => {
               <p className="text-sm text-gray-400 mb-2">Follow Us</p>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/ripple-vfx-studios/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white/50 hover:text-white transition-all duration-300 hover:scale-110 text-sm"
                 >
                   LinkedIn
