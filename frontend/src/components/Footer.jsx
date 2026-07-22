@@ -27,8 +27,10 @@ const Footer = ({ activeDepartment }) => {
             {/* Social Links - LinkedIn only */}
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/ripple-vfx-studios/"
                 aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300 group"
               >
                 <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
