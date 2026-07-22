@@ -99,7 +99,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       placeholder="Your name"
-                      className="bg-black/50 border-gray-700 focus:border-white transition-colors"
+                      className="bg-black/50 border-gray-700 focus:border-white transition-colors text-white placeholder:text-gray-400"
                     />
                   </div>
                   <div>
@@ -114,7 +114,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       placeholder="your.email@example.com"
-                      className="bg-black/50 border-gray-700 focus:border-white transition-colors"
+                      className="bg-black/50 border-gray-700 focus:border-white transition-colors text-white placeholder:text-gray-400"
                     />
                   </div>
                 </div>

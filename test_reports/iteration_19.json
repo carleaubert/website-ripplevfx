@@ -1,0 +1,35 @@
+{
+  "summary": "Verified text color fixes on Contact and Careers forms. Careers page fully fixed (all inputs white, dropdown options styled with dark bg + white text, colorScheme:dark applied). Contact form fix is INCOMPLETE: 'company' input and 'message' textarea still render text in near-black (rgb(10,10,10)) on the dark background because the text-white/placeholder classes were only added to name and email fields.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "Contact form: name input text color = rgb(255,255,255) (white)",
+    "Contact form: email input text color = rgb(255,255,255) (white)",
+    "Careers form: name/email/portfolio/message inputs all render white text on dark bg",
+    "Careers form: position select renders white text",
+    "Careers form: 19 options + 3 optgroups all have inline backgroundColor #1f2937/#111827 and color #fff",
+    "Careers form: select has style.colorScheme = 'dark' (native dark popup on supporting browsers)",
+    "Both pages load successfully via public URL"
+  ],
+  "failed": [
+    {
+      "area": "Contact form - Company input",
+      "issue": "Typed text is invisible (near-black rgb(10,10,10) on dark bg). Missing text-white and placeholder:text-gray-400 classes.",
+      "evidence": "/app/frontend/src/components/Contact.jsx line 132: className=\"bg-black/50 border-gray-700 focus:border-white transition-colors\" (no text-white). Playwright getComputedStyle(#company).color returned rgb(10, 10, 10). Screenshot confirms 'Acme Co' text is not visible in the field.",
+      "priority": "HIGH"
+    },
+    {
+      "area": "Contact form - Message textarea",
+      "issue": "Typed text is invisible (near-black rgb(10,10,10) on dark bg). Missing text-white and placeholder:text-gray-400 classes.",
+      "evidence": "/app/frontend/src/components/Contact.jsx line 148: className=\"bg-black/50 border-gray-700 focus:border-white transition-colors resize-none\" (no text-white). Playwright getComputedStyle(#message).color returned rgb(10, 10, 10). Screenshot confirms typed message text is not visible.",
+      "priority": "HIGH"
+    }
+  ],
+  "action_items": [
+    "In /app/frontend/src/components/Contact.jsx, add 'text-white placeholder:text-gray-400' to the className of the Company Input (line 132) and Message Textarea (line 148), matching what was already done for name/email fields.",
+    "After fix, re-verify by typing in both Company and Message fields on the Ripple VFX contact section AND on the Ripple Digital variant (if a separate ContactDigital component exists — check by clicking 'Ripple Digital' toggle in header)."
+  ],
+  "success_rate": {"backend": "N/A (not tested per request)", "frontend": "~85% (13/15 checks passed; 2 Contact form fields still broken)"},
+  "retest_needed": true,
+  "full_testing_deferred": true,
+  "test_credentials": "N/A - no auth flows involved"
+}
