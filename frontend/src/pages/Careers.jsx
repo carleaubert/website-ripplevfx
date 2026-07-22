@@ -27,20 +27,40 @@ const Careers = () => {
     setIsSubmitting(true);
 
     try {
-      // In a production environment, this would send to a backend endpoint
-      // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, SUBMISSION_DELAY_MS));
-      
-      toast.success('Application submitted successfully! We\'ll be in touch soon.');
-      setFormData({
-        name: '',
-        email: '',
-        position: '',
-        portfolio: '',
-        message: ''
+      // Map portfolio to phone for backend compatibility
+      const submissionData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.portfolio || '',
+        position: formData.position,
+        experience: 'Mid-level',
+        message: formData.message
+      };
+
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/careers`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData)
       });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success(data.message || 'Application submitted successfully! We\'ll be in touch soon.');
+        setFormData({
+          name: '',
+          email: '',
+          position: '',
+          portfolio: '',
+          message: ''
+        });
+      } else {
+        throw new Error(data.detail || 'Failed to submit application');
+      }
     } catch (error) {
-      toast.error('Failed to submit application. Please try again or email us directly.');
+      toast.error(error.message || 'Failed to submit application. Please try again or email us directly.');
     } finally {
       setIsSubmitting(false);
     }
