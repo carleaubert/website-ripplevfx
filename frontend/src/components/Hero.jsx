@@ -46,7 +46,7 @@ const Hero = () => {
     >
       {/* Video Background */}
       <div className="absolute inset-0 overflow-hidden bg-black">
-        {/* MP4 Video Background */}
+        {/* MP4 Video Background - Presentation Video */}
         <div 
           className="absolute w-full h-full flex items-center justify-center"
           style={{ 
@@ -65,7 +65,7 @@ const Hero = () => {
               pointerEvents: 'none'
             }}
           >
-            <source src="https://customer-assets-7cd3h4nn.emergentagent.net/job_ripple-fx-studio/artifacts/hx0nabz1_demoreel_2026_ripple.mp4" type="video/mp4" />
+            <source src="https://customer-assets-7cd3h4nn.emergentagent.net/job_ripple-fx-studio/artifacts/9yzvound_webiste_demoreel_2026_ripple.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
