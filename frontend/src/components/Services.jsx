@@ -64,7 +64,7 @@ const Services = () => {
             const IconComponent = iconMap[service.icon];
             return (
               <Card
-                key={index}
+                key={service.id}
                 className="service-card group bg-gray-900/50 border-gray-800 hover:border-gray-600 transition-all duration-500 p-8 opacity-0 translate-y-10 hover:scale-105 hover:bg-gray-900/80 relative overflow-hidden"
               >
                 {/* Background glow on hover */}

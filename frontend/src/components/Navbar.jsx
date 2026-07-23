@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Film, Building2 } from 'lucide-react';
@@ -22,13 +22,14 @@ const Navbar = ({ scrolled, activeDepartment, onDepartmentChange }) => {
     }
   };
 
+  const handleEscape = useCallback((e) => {
+    if (e.key === 'Escape') setSideMenuOpen(false);
+  }, []);
+
   useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === 'Escape') setSideMenuOpen(false);
-    };
     window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
-  }, []);
+  }, [handleEscape]);
 
   useEffect(() => {
     if (sideMenuOpen) {

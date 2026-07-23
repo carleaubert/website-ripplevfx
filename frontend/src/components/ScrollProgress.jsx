@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 const ScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  useEffect(() => {
-    const updateScrollProgress = () => {
-      const scrollPx = document.documentElement.scrollTop;
-      const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (scrollPx / winHeightPx) * 100;
-      setScrollProgress(scrolled);
-    };
+  const updateScrollProgress = useCallback(() => {
+    const scrollPx = document.documentElement.scrollTop;
+    const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scrollPx / winHeightPx) * 100;
+    setScrollProgress(scrolled);
+  }, []);
 
+  useEffect(() => {
     window.addEventListener('scroll', updateScrollProgress);
     return () => window.removeEventListener('scroll', updateScrollProgress);
-  }, []);
+  }, [updateScrollProgress]);
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-gray-900">

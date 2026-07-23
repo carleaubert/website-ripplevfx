@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Building2, Film } from 'lucide-react';
 import VFXDepartment from '../components/departments/VFXDepartment';
 import DigitalDepartment from '../components/departments/DigitalDepartment';
@@ -11,38 +11,38 @@ const Home = () => {
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setScrolled(scrollTop > 50);
+  const handleScroll = useCallback(() => {
+    const scrollTop = window.scrollY;
+    setScrolled(scrollTop > 50);
+    
+    // Calculate scroll progress for dissolve effect
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollProgress = (scrollTop / (documentHeight - windowHeight)) * 100;
+    setScrollProgress(scrollProgress);
+
+    // Dissolve effect on scroll
+    const sections = document.querySelectorAll('.dissolve-section');
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const elementTop = rect.top;
+      const elementHeight = rect.height;
       
-      // Calculate scroll progress for dissolve effect
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollProgress = (scrollTop / (documentHeight - windowHeight)) * 100;
-      setScrollProgress(scrollProgress);
+      // Calculate opacity based on scroll position
+      if (elementTop < windowHeight && elementTop + elementHeight > 0) {
+        const progress = Math.min(Math.max((windowHeight - elementTop) / (windowHeight * 0.5), 0), 1);
+        section.style.opacity = progress;
+        section.style.transform = `translateY(${(1 - progress) * 50}px)`;
+      }
+    });
+  }, []);
 
-      // Dissolve effect on scroll
-      const sections = document.querySelectorAll('.dissolve-section');
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        const elementTop = rect.top;
-        const elementHeight = rect.height;
-        
-        // Calculate opacity based on scroll position
-        if (elementTop < windowHeight && elementTop + elementHeight > 0) {
-          const progress = Math.min(Math.max((windowHeight - elementTop) / (windowHeight * 0.5), 0), 1);
-          section.style.opacity = progress;
-          section.style.transform = `translateY(${(1 - progress) * 50}px)`;
-        }
-      });
-    };
-
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial call
     
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   const switchDepartment = (dept) => {
     setActiveDepartment(dept);

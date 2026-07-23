@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { Button } from './ui/button';
 import { Play, ChevronDown, Sparkles, X } from 'lucide-react';
 
@@ -11,25 +11,25 @@ const Hero = () => {
   const [showReelModal, setShowReelModal] = useState(false);
   const heroRef = useRef(null);
 
+  const handleMouseMove = useCallback((e) => {
+    setMousePosition({
+      x: (e.clientX / window.innerWidth - 0.5) * MOUSE_MOVEMENT_FACTOR,
+      y: (e.clientY / window.innerHeight - 0.5) * MOUSE_MOVEMENT_FACTOR
+    });
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    setScrollY(window.scrollY);
+  }, []);
+
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth - 0.5) * MOUSE_MOVEMENT_FACTOR,
-        y: (e.clientY / window.innerHeight - 0.5) * MOUSE_MOVEMENT_FACTOR
-      });
-    };
-
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [handleMouseMove, handleScroll]);
 
   const scrollToProjects = () => {
     document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -85,7 +85,7 @@ const Hero = () => {
         <div className="absolute inset-0 z-20">
           {[...Array(15)].map((_, i) => (
             <div
-              key={i}
+              key={`particle-${i}`}
               className="absolute w-1 h-1 bg-white rounded-full animate-float"
               style={{
                 left: `${Math.random() * 100}%`,

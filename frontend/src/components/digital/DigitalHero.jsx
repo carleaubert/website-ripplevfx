@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Button } from '../ui/button';
 import { Sparkles, ChevronDown } from 'lucide-react';
 
 const DigitalHero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth - 0.5) * 20,
-        y: (e.clientY / window.innerHeight - 0.5) * 20
-      });
-    };
+  const handleMouseMove = useCallback((e) => {
+    setMousePosition({
+      x: (e.clientX / window.innerWidth - 0.5) * 20,
+      y: (e.clientY / window.innerHeight - 0.5) * 20
+    });
+  }, []);
 
+  useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [handleMouseMove]);
 
   const scrollToProjects = () => {
     document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -46,7 +46,7 @@ const DigitalHero = () => {
         <div className="absolute inset-0">
           {[...Array(8)].map((_, i) => (
             <div
-              key={i}
+              key={`float-${i}`}
               className="absolute w-1 h-1 bg-white rounded-full animate-float"
               style={{
                 left: `${Math.random() * 100}%`,
