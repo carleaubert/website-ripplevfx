@@ -33,15 +33,18 @@ const Contact = () => {
       const data = await response.json();
       
       if (response.ok) {
+        trackFormSubmission('contact', true);
         toast({
           title: "Message Sent!",
           description: data.message || "Thank you for reaching out. We'll get back to you soon.",
         });
         setFormData({ name: '', email: '', company: '', message: '' });
       } else {
+        trackFormSubmission('contact', false);
         throw new Error(data.detail || 'Failed to send message');
       }
     } catch (error) {
+      trackFormSubmission('contact', false);
       toast({
         title: "Error",
         description: error.message || "Failed to send message. Please try again later.",

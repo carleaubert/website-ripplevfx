@@ -5,6 +5,9 @@ import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Careers from './pages/Careers';
+import NotFound from './pages/NotFound';
+import BackToTop from './components/BackToTop';
+import ScrollProgress from './components/ScrollProgress';
 import { Toaster } from './components/ui/sonner';
 
 // Component to handle scroll to top on route change
@@ -22,13 +25,16 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ScrollProgress />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
+        <BackToTop />
       </BrowserRouter>
       <Toaster />
     </div>
