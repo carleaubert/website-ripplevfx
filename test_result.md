@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Ripple VFX Studios website with code quality improvements applied - fixing React hook dependencies, array index keys, component refactoring, and magic number extraction. Testing to verify all functionality works after code quality changes."
+user_problem_statement: "Ripple VFX Studios website with comprehensive code quality improvements: Fixed 21+ hook dependency warnings, refactored 4 major components (StructuredData, Navbar, Hero, Careers), created 3 reusable hooks (useIntersectionAnimation, useParallax), extracted sub-components, reduced bundle size. Testing to verify all functionality works after extensive refactoring."
 
 backend:
   - task: "Contact Form Email Submission"
@@ -110,155 +110,127 @@ backend:
     working: true
     file: "server.py"
     stuck_count: 0
-    priority: "high"
+    priority: "medium"
     needs_retesting: false
     status_history:
       - working: true
         agent: "main"
-        comment: "API endpoint returns 200 success. Resend email integration working for contact@ripplevfxstudios.com"
+        comment: "API endpoint verified working in iteration_21. No backend changes in this iteration."
   
   - task: "Careers Form Email Submission"
     implemented: true
     working: "limited"
     file: "server.py"
     stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-      - working: "limited"
-        agent: "main"
-        comment: "API endpoint works but Resend test mode only allows sending to verified sender (contact@), not career@ address. Code is correct, limitation is Resend test mode."
-      - working: "limited"
-        agent: "testing"
-        comment: "iteration_21: Returns 500 as expected due to Resend restriction. For production, domain verification needed. Optional improvement: separate email failure from DB insert."
-
-frontend:
-  - task: "React Hook Dependencies Fixed"
-    implemented: true
-    working: true
-    file: "Hero.jsx, DigitalHero.jsx, Navbar.jsx, Home.jsx, BackToTop.jsx, ScrollProgress.jsx, use-toast.js"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-      - working: "unknown"
-        agent: "main"
-        comment: "Applied useCallback to all event handlers. Need to verify mouse movements, scroll animations, keyboard shortcuts work correctly"
-      - working: true
-        agent: "testing"
-        comment: "iteration_21: All hook fixes verified working. Mouse parallax, scroll animations, Escape key, BackToTop (300px) all execute without errors. Zero console errors."
-
-  - task: "Array Index Keys Replaced"
-    implemented: true
-    working: true
-    file: "Hero.jsx, DigitalHero.jsx, Services.jsx"
-    stuck_count: 0
     priority: "medium"
     needs_retesting: false
     status_history:
-      - working: "unknown"
+      - working: "limited"
         agent: "main"
-        comment: "Changed index keys to stable keys. Need to verify particle animations and service cards render correctly"
-      - working: true
-        agent: "testing"
-        comment: "iteration_21: Stable keys working correctly. All components render without React key warnings."
+        comment: "Resend test mode limitation. No backend changes in this iteration."
 
-  - task: "Careers Page Refactored"
+frontend:
+  - task: "React Hook Dependencies - All Components"
     implemented: true
-    working: true
-    file: "Careers.jsx, CareerValues.jsx, AboutSection.jsx, ApplicationForm.jsx"
+    working: "unknown"
+    file: "Home.jsx, Hero.jsx, Navbar.jsx, ScrollProgress.jsx, use-toast.js, 12+ other components"
     stuck_count: 0
-    priority: "high"
-    needs_retesting: false
+    priority: "critical"
+    needs_retesting: true
     status_history:
       - working: "unknown"
         agent: "main"
-        comment: "Split 324-line component into smaller sub-components. Need to verify all sections render, form submission works, navigation works"
-      - working: true
-        agent: "testing"
-        comment: "iteration_21: All 3 refactored components render correctly. 7 headings found, form fields work, navigation works. Component split successful with zero regressions."
+        comment: "Fixed ALL 21+ hook warnings. Created useIntersectionAnimation hook for 12+ components. Created useParallax hooks. Need comprehensive testing of: mouse parallax, scroll animations, intersection animations, keyboard shortcuts, all event handlers."
 
-  - task: "Homepage Hero Video & Animations"
+  - task: "Navbar Refactored with Sub-components"
     implemented: true
     working: "unknown"
-    file: "Hero.jsx"
+    file: "Navbar.jsx, navbar/DepartmentSwitcher.jsx, navbar/MobileMenu.jsx"
     stuck_count: 0
     priority: "high"
     needs_retesting: true
     status_history:
       - working: "unknown"
         agent: "main"
-        comment: "Hook changes may affect mouse parallax and scroll animations. Need thorough testing"
+        comment: "Refactored from 253→100 lines, complexity 15→<10. Extracted DepartmentSwitcher and MobileMenu. Need to verify: department switching, mobile menu open/close, Escape key, navigation links, overlay click."
+
+  - task: "StructuredData Refactored with Schema Builders"
+    implemented: true
+    working: "unknown"
+    file: "StructuredData.jsx, utils/schemaBuilders.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Refactored from 267→40 lines. Extracted to schemaBuilders.js. Need to verify SEO metadata renders correctly in page source."
+
+  - task: "Hero with Custom Parallax Hooks"
+    implemented: true
+    working: "unknown"
+    file: "Hero.jsx, hooks/useParallax.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Refactored 195→160 lines using useMouseParallax and useScrollPosition hooks. Need to verify: mouse movement parallax, scroll effects, video modal, floating particles, all animations."
+
+  - task: "Intersection Observer Animations"
+    implemented: true
+    working: "unknown"
+    file: "useIntersectionAnimation.js + 12+ components"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "unknown"
+        agent: "main"
+        comment: "Created centralized hook used by VFX/Digital/Core components. Need to verify: Services cards animate, Team cards animate, Projects cards animate, all scroll-triggered animations work across both departments."
 
   - task: "Department Switching (VFX/Digital)"
     implemented: true
     working: "unknown"
-    file: "Home.jsx, Navbar.jsx"
+    file: "Home.jsx, Navbar.jsx, DepartmentSwitcher.jsx"
     stuck_count: 0
     priority: "high"
     needs_retesting: true
     status_history:
       - working: "unknown"
         agent: "main"
-        comment: "Hook changes applied. Need to verify department switching, content rendering, scroll behavior"
+        comment: "Hook changes and component extraction. Need to verify: toggle works, content switches, scroll resets, logo changes, both desktop and mobile."
 
-  - task: "Navigation & Scroll Behavior"
+  - task: "Careers Page with Refactored Components"
     implemented: true
     working: "unknown"
-    file: "Navbar.jsx, App.js"
+    file: "Careers.jsx, careers/CareerValues.jsx, careers/AboutSection.jsx, careers/ApplicationForm.jsx"
     stuck_count: 0
     priority: "high"
     needs_retesting: true
     status_history:
       - working: "unknown"
         agent: "main"
-        comment: "Hook changes applied to navbar. Need to verify anchor links, smooth scroll, mobile menu, keyboard shortcuts"
-
-  - task: "Contact Form UI"
-    implemented: true
-    working: "unknown"
-    file: "Contact.jsx"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: true
-    status_history:
-      - working: "unknown"
-        agent: "main"
-        comment: "Previous iteration_20 test passed. Need to verify still working after code quality changes"
-
-  - task: "Video Modal (Watch Our Reel)"
-    implemented: true
-    working: "unknown"
-    file: "Hero.jsx"
-    stuck_count: 0
-    priority: "medium"
-    needs_retesting: true
-    status_history:
-      - working: "unknown"
-        agent: "main"
-        comment: "Hook changes may affect modal state management. Need to verify modal open/close, video playback"
+        comment: "Already refactored 324→165 lines. Verify still working after global hook changes: all sections render, form submission works."
 
 metadata:
   created_by: "main_agent"
-  version: "2.0"
-  test_sequence: 21
+  version: "3.0"
+  test_sequence: 22
   run_ui: true
 
 test_plan:
   current_focus:
-    - "React Hook Dependencies Fixed"
-    - "Careers Page Refactored"
-    - "Homepage Hero Video & Animations"
+    - "React Hook Dependencies - All Components"
+    - "Navbar Refactored with Sub-components"
+    - "Hero with Custom Parallax Hooks"
+    - "Intersection Observer Animations"
     - "Department Switching (VFX/Digital)"
-    - "Navigation & Scroll Behavior"
   stuck_tasks: []
   test_all: true
-  test_priority: "high_first"
+  test_priority: "critical_first"
 
 agent_communication:
   - agent: "main"
-    message: "Code quality fixes completed: 21 hook dependency warnings fixed with useCallback, 3 array index keys replaced with stable keys, Careers.jsx refactored from 324 to 165 lines with 3 sub-components created, server_broken.py deleted. Build successful. Visual verification passed. Now need comprehensive frontend testing to ensure all animations, interactions, navigation, and forms work correctly after these changes. Special focus on: mouse parallax effects, scroll animations, department switching, mobile menu, careers form submission, and video modal."
-  - agent: "testing"
-    message: "iteration_21 completed successfully. All code quality changes verified working with ZERO regressions. Hook fixes (useCallback) work perfectly - mouse parallax, scroll animations, keyboard shortcuts all functional. Stable keys render correctly. Refactored Careers page (3 components) displays all sections correctly. Contact form works. Visual design preserved. Only expected failure: careers email (Resend test mode). Frontend: 100% pass rate. Ready for user verification."
-  - agent: "main"
-    message: "Testing complete. All code quality improvements verified. Application fully functional. Careers email limitation is Resend test mode only - production will need domain verification. Updating user with final summary."
+    message: "Comprehensive code quality phase 2 completed. Fixed ALL 21+ hook dependency warnings by creating reusable hooks (useIntersectionAnimation for 12+ components, useParallax for Hero). Refactored 4 major components: StructuredData (267→40 lines), Navbar (253→100 lines, complexity 15→<10), Hero (195→160 lines), Careers (already done 324→165). Created 5 new utilities/sub-components. Build successful, bundle -602B smaller. Screenshot verification passed for basic functionality. NOW NEED COMPREHENSIVE TESTING: All mouse/scroll events after hook changes, all intersection animations, department switching, mobile menu with Escape key, refactored component functionality, SEO metadata. Zero console errors expected."

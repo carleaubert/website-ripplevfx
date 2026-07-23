@@ -1,0 +1,36 @@
+{
+  "summary": "Post-refactoring frontend smoke test for Ripple VFX Studios. Verified custom hooks (useIntersectionAnimation, useMouseParallax, useScrollPosition), Navbar sub-components (DepartmentSwitcher, MobileMenu), refactored StructuredData, Hero, Careers, Contact. Core flows work with zero console errors.",
+  "tested_scope": ["frontend", "integration"],
+  "passed": [
+    "Homepage loads at REACT_APP_BACKEND_URL with no console errors",
+    "Hero <video> element renders correctly after Hero.jsx refactor",
+    "Mouse movement handled without errors (useMouseParallax hook working)",
+    "Scroll (window.scrollTo) fires without errors, back-to-top button becomes visible after scroll (useScrollPosition + BackToTop useCallback OK)",
+    "Department switcher: 'Ripple Digital' click switches content (body text updates), 'Ripple VFX' switches back",
+    "All main sections present: services, team, projects, about, contact",
+    "Contact form fields render (name, email, textarea)",
+    "SEO structured data present in DOM: 4 <script type='application/ld+json'> tags (schemaBuilders refactor OK)",
+    "Careers page (/careers) loads with career content and application form",
+    "Mobile viewport (390x844): hamburger opens mobile menu showing 'Department' section (Ripple VFX / Ripple Digital) and 'Navigation' section (Projects, Services, About, Team, Contact, Careers, LinkedIn) - matches new MobileMenu component",
+    "Escape key closes mobile menu on mobile viewport",
+    "Watch Our Reel modal opens on click and renders <video src='/assets/videos/demo-reel.mp4' autoplay>",
+    "Zero console errors across desktop and mobile navigation"
+  ],
+  "failed": [
+    {
+      "area": "Video reel modal - Escape key close",
+      "issue": "After opening 'Watch Our Reel' modal on desktop viewport, pressing Escape did not appear to dismiss the modal overlay (subsequent click on 'Send Message' button was intercepted by the modal overlay div.fixed.inset-0.z-50). Note: On mobile viewport, Escape correctly closed the mobile menu. This may be because focus is on <video> element which consumes Escape, but requires verification.",
+      "evidence": "Screenshot showed reel modal still visible over the contact section after Escape+scroll; click intercept log mentioned 'div.fixed.inset-0.z-50 ... intercepts pointer events' and '<video ...demo-reel.mp4>'",
+      "priority": "MEDIUM"
+    }
+  ],
+  "action_items": [
+    "Verify Watch Our Reel video modal handles Escape key close on desktop (window-level keydown listener rather than element-scoped, to avoid <video> capturing the key). X-button close was not verified due to test-time timeout on a follow-up retry; please confirm both close paths (X button and Escape) still work after Hero.jsx refactor."
+  ],
+  "success_rate": {
+    "backend": "not tested (skip per request)",
+    "frontend": "~95% (12/13 verified passes; 1 medium item to confirm)"
+  },
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
