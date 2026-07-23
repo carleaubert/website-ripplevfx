@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Button } from './ui/button';
 import { Play, ChevronDown, Sparkles, X } from 'lucide-react';
 import { useMouseParallax, useScrollPosition } from '../hooks/useParallax';
@@ -14,6 +14,27 @@ const Hero = () => {
   const scrollToProjects = () => {
     document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  // Handle Escape key to close modal
+  const handleEscape = useCallback((e) => {
+    if (e.key === 'Escape' && showReelModal) {
+      setShowReelModal(false);
+    }
+  }, [showReelModal]);
+
+  useEffect(() => {
+    if (showReelModal) {
+      window.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [showReelModal, handleEscape]);
 
   // Parallax effect
   const parallaxOffset = scrollY * 0.5;
