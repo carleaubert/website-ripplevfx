@@ -1,41 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { projects } from '../mockData';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
+import { useIntersectionAnimation } from '../hooks/useIntersectionAnimation';
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
-  const [visibleProjects, setVisibleProjects] = useState([]);
-  const sectionRef = useRef(null);
+  const sectionRef = useIntersectionAnimation('.project-card', 100, 0.1);
   const categories = ['All', 'Feature Film', 'TV Series', 'Action Film', 'Sci-Fi Film', 'Commercial'];
 
   const filteredProjects = filter === 'All'
     ? projects
     : projects.filter(p => p.category === filter);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cards = entry.target.querySelectorAll('.project-card');
-            cards.forEach((card, index) => {
-              setTimeout(() => {
-                card.classList.add('visible');
-              }, index * 100);
-            });
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <section id="projects" ref={sectionRef} className="py-24 bg-black relative overflow-hidden">

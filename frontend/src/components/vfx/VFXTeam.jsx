@@ -1,34 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { vfxTeam } from '../../mockData';
 import { Card } from '../ui/card';
 import { ExternalLink } from 'lucide-react';
+import { useIntersectionAnimation } from '../../hooks/useIntersectionAnimation';
 
 const VFXTeam = () => {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cards = entry.target.querySelectorAll('.team-card');
-            cards.forEach((card, index) => {
-              setTimeout(() => {
-                card.classList.add('visible');
-              }, index * 100);
-            });
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const sectionRef = useIntersectionAnimation('.team-card', 100, 0.1);
 
   return (
     <section id="team" ref={sectionRef} className="py-24 bg-gradient-to-b from-black via-gray-950 to-black relative overflow-hidden">

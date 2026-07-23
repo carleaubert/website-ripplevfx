@@ -6,6 +6,8 @@ const VFXAbout = () => {
   const imageRef = useRef(null);
 
   useEffect(() => {
+    const currentSection = sectionRef.current;
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -17,7 +19,7 @@ const VFXAbout = () => {
       { threshold: 0.1 }
     );
 
-    const elements = sectionRef.current?.querySelectorAll('.scroll-animate');
+    const elements = currentSection?.querySelectorAll('.scroll-animate');
     elements?.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();

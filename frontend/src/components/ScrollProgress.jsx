@@ -6,9 +6,9 @@ const ScrollProgress = () => {
   const updateScrollProgress = useCallback(() => {
     const scrollPx = document.documentElement.scrollTop;
     const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (scrollPx / winHeightPx) * 100;
-    setScrollProgress(scrolled);
-  }, []);
+    const calculated = (scrollPx / winHeightPx) * 100;
+    setScrollProgress(calculated);
+  }, []); // Empty deps - DOM values computed fresh on each scroll
 
   useEffect(() => {
     window.addEventListener('scroll', updateScrollProgress);

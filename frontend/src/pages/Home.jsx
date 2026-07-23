@@ -18,8 +18,8 @@ const Home = () => {
     // Calculate scroll progress for dissolve effect
     const windowHeight = window.innerHeight;
     const documentHeight = document.documentElement.scrollHeight;
-    const scrollProgress = (scrollTop / (documentHeight - windowHeight)) * 100;
-    setScrollProgress(scrollProgress);
+    const calculatedProgress = (scrollTop / (documentHeight - windowHeight)) * 100;
+    setScrollProgress(calculatedProgress);
 
     // Dissolve effect on scroll
     const sections = document.querySelectorAll('.dissolve-section');
@@ -35,7 +35,7 @@ const Home = () => {
         section.style.transform = `translateY(${(1 - progress) * 50}px)`;
       }
     });
-  }, []);
+  }, []); // Empty deps - all values computed fresh on each scroll
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);

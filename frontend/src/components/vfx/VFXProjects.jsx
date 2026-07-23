@@ -1,34 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { vfxProjects } from '../../mockData';
 import { Card } from '../ui/card';
 import { Badge } from '../ui/badge';
+import { useIntersectionAnimation } from '../../hooks/useIntersectionAnimation';
 
 const VFXProjects = () => {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cards = entry.target.querySelectorAll('.project-card');
-            cards.forEach((card, index) => {
-              setTimeout(() => {
-                card.classList.add('visible');
-              }, index * 100);
-            });
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const sectionRef = useIntersectionAnimation('.project-card', 100, 0.1);
 
   return (
     <section id="projects" ref={sectionRef} className="py-24 bg-black relative overflow-hidden">

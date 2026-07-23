@@ -1,35 +1,15 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from './ui/button';
 import { Play, ChevronDown, Sparkles, X } from 'lucide-react';
+import { useMouseParallax, useScrollPosition } from '../hooks/useParallax';
 
 const MOUSE_MOVEMENT_FACTOR = 30;
-const PARALLAX_SPEED = 15;
 
 const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [scrollY, setScrollY] = useState(0);
+  const mousePosition = useMouseParallax(MOUSE_MOVEMENT_FACTOR);
+  const scrollY = useScrollPosition();
   const [showReelModal, setShowReelModal] = useState(false);
   const heroRef = useRef(null);
-
-  const handleMouseMove = useCallback((e) => {
-    setMousePosition({
-      x: (e.clientX / window.innerWidth - 0.5) * MOUSE_MOVEMENT_FACTOR,
-      y: (e.clientY / window.innerHeight - 0.5) * MOUSE_MOVEMENT_FACTOR
-    });
-  }, []);
-
-  const handleScroll = useCallback(() => {
-    setScrollY(window.scrollY);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [handleMouseMove, handleScroll]);
 
   const scrollToProjects = () => {
     document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
