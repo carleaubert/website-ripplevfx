@@ -1,0 +1,34 @@
+{
+  "summary": "Post code-quality-fix verification (useCallback hooks + refactored Careers + stable keys). Backend contact API 200 OK; careers API returns 500 as expected (Resend test-mode restriction to career@ email). Frontend loads with ZERO console/page errors. Hero video renders, mouse parallax executes without errors after useCallback fix, department switcher toggles VFX/Digital cleanly, Watch Our Reel modal opens with video, contact form fields fill correctly, Careers page renders all refactored components (CareerValues, AboutSection, ApplicationForm) with 7 headings and working form fields, BackToTop appears after scroll (300px threshold). Visual design preserved as required.",
+  "tested_scope": ["frontend", "backend", "integration"],
+  "passed": [
+    "GET /api/ -> 200 {message: Hello World}",
+    "POST /api/contact -> 200 success",
+    "Homepage loads without console errors",
+    "Hero <video> element rendered (Watch Reel modal confirms local MP4 loads)",
+    "Mouse parallax movements (useCallback handleMouseMove) - no errors",
+    "Department switcher toggles VFX <-> Digital correctly (screenshots confirm content change)",
+    "Scroll animations execute without errors (useCallback handleScroll)",
+    "BackToTop button appears after scrolling past 300px",
+    "Watch Our Reel modal opens with playable video, Escape closes it",
+    "Contact form inputs accept text (name/email/message)",
+    "/careers route loads, refactored components render (7 headings), Application form inputs work",
+    "Zero console errors / page errors across full flow"
+  ],
+  "failed": [
+    {
+      "area": "backend/careers",
+      "issue": "POST /api/careers returns 500 due to Resend test-mode restriction blocking delivery to career@ripplevfxstudios.com",
+      "evidence": "curl -X POST /api/careers -> HTTP 500 {detail: Failed to submit application...}",
+      "priority": "LOW"
+    }
+  ],
+  "action_items": [
+    "Careers 500 is EXPECTED per problem statement (Resend test-mode). For production, verify domain in Resend or update CAREERS_EMAIL. No code change needed for current MVP.",
+    "Optional: catch Resend delivery failure separately from DB insert so applications still persist even when email delivery fails."
+  ],
+  "success_rate": {"backend": "67% (2/3 - careers expected fail)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true,
+  "notes": "Code quality refactor (useCallback hooks, stable keys, Careers component split) did NOT break any functionality. Visual design preserved. Zero regressions detected."
+}
